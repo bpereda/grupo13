@@ -2,10 +2,10 @@ package tads.MyStack;
 
 import java.util.EmptyStackException;
 
-public class StackEnlazado implements MyStack{
+public class LinkedStack implements MyStack{
     private Node top;
 
-    public StackEnlazado() {
+    public LinkedStack() {
 
     }
 
