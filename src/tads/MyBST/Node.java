@@ -28,4 +28,20 @@ public class Node<K,T> {
     public void setData(T data) {
         this.data = data;
     }
+
+    public Node<K, T> getLeftChild() {
+        return leftChild;
+    }
+
+    public void setLeftChild(Node<K, T> leftChild) {
+        this.leftChild = leftChild;
+    }
+
+    public Node<K, T> getRightChild() {
+        return rightChild;
+    }
+
+    public void setRightChild(Node<K, T> rightChild) {
+        this.rightChild = rightChild;
+    }
 }
