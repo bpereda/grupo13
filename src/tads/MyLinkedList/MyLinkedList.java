@@ -1,7 +1,5 @@
 package tads.MyLinkedList;
 
-import tads.MyList;
-
 public class MyLinkedList implements MyList {
 
     private Node first, last;
