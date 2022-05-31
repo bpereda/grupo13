@@ -7,7 +7,7 @@ public class MyLinkedList<B> implements MyList<B> {
 
     @Override
     public void add(B value) {
-        Node<B> temp = new Node(B value);
+        Node<B> temp = new Node<B>(B value);
 
         if (first == null) {
             first = temp;
