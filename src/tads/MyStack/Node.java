@@ -1,26 +1,26 @@
 package tads.MyStack;
 
-public class Node {
-    private Object value;
-    private Node next;
+public class Node<B> {
+    private B value;
+    private Node<B> next;
 
-    public Node(Object value){
+    public Node<B>(B value){
         this.value = value;
     }
 
-    public Node getNext(){
+    public Node<B> getNext(){
         return next;
     }
 
-    public Object getValue(){
+    public B getValue(){
         return value;
     }
 
-    void setNext(Node next){
+    void setNext(Node<B> next){
         this.next = next;
     }
 
-    void setValue(Object value){
+    void setValue(B value){
         this.value = value;
     }
 

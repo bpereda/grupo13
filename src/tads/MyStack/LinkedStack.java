@@ -2,16 +2,16 @@ package tads.MyStack;
 
 import java.util.EmptyStackException;
 
-public class LinkedStack implements MyStack{
-    private Node top;
+public class LinkedStack<B> implements MyStack<B>{
+    private Node<B> top;
 
     public LinkedStack() {
 
     }
 
     @Override
-    public void push(Object element) {
-        Node temp = new Node(element);
+    public void push(B element) {
+        Node<B> temp = new Node(element);
 
         if (top == null){
             top = temp;

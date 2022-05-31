@@ -1,24 +1,28 @@
 package tads.MyLinkedList;
 
-public class Node {
+public class Node<B> {
 
-    private Object value;
-    private Node next;
+    private B value;
+    private Node<B> next;
 
-    public Node(Object value){
+    public Node<B> (B value){
         this.value = value;
         this.next = null;
     }
 
-    public Object getValue() {
+    public B getValue() {
         return value;
     }
 
-    public Node getNext() {
+    public void setValue(B value) {
+        this.value = value;
+    }
+
+    public Node<B> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<B> next) {
         this.next = next;
     }
 

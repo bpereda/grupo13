@@ -1,13 +1,13 @@
 package tads.MyLinkedList;
 
-public class MyLinkedList implements MyList {
+public class MyLinkedList<B> implements MyList<B> {
 
-    private Node first, last;
+    private Node<B> first, last;
     private int size = 0;
 
     @Override
-    public void add(Object value) {
-        Node temp = new Node(value);
+    public void add(B value) {
+        Node<B> temp = new Node(B value);
 
         if (first == null) {
             first = temp;
@@ -19,8 +19,8 @@ public class MyLinkedList implements MyList {
     }
 
     @Override
-    public Object get(int position) {
-        Node temp = first;
+    public B get(int position) {
+        Node<B> temp = first;
         int i = 0;
 
         while (i < position) {
@@ -32,8 +32,8 @@ public class MyLinkedList implements MyList {
 
     @Override
     public void remove(int position) {
-        Node temp1 = first;
-        Node temp2 = first;
+        Node<B> temp1 = first;
+        Node<B> temp2 = first;
         int i = 0;
 
         while (i < (position - 1)) {
