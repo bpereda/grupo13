@@ -7,11 +7,11 @@ public class MyLinkedList<B> implements MyList<B> {
 
     @Override
     public void add(B value) {
-        Node<B> temp = new Node<B>(B value);
+        Node<B> temp = new Node<>(value);
 
         if (first == null) {
             first = temp;
-        } else if (first != null) {
+        } else {
             last.setNext(temp);
         }
         last = temp;
