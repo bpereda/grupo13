@@ -1,16 +1,15 @@
 package tads.MyBST;
 
-public class Node<K,T> {
+public class NodeBST<K extends Comparable<K>,T>{
     K key;
     T data;
 
-    Node<K,T> leftChild;
-    Node<K,T> rightChild;
+    NodeBST<K,T> leftChild;
+    NodeBST<K,T> rightChild;
 
-    public Node(K key, T data) {
+    public NodeBST(K key, T data) {
         this.key = key;
         this.data = data;
-
     }
 
     public K getKey() {
@@ -29,19 +28,20 @@ public class Node<K,T> {
         this.data = data;
     }
 
-    public Node<K, T> getLeftChild() {
+    public NodeBST<K, T> getLeftChild() {
         return leftChild;
     }
 
-    public void setLeftChild(Node<K, T> leftChild) {
+    public void setLeftChild(NodeBST<K, T> leftChild) {
         this.leftChild = leftChild;
     }
 
-    public Node<K, T> getRightChild() {
+    public NodeBST<K, T> getRightChild() {
         return rightChild;
     }
 
-    public void setRightChild(Node<K, T> rightChild) {
+    public void setRightChild(NodeBST<K, T> rightChild) {
         this.rightChild = rightChild;
     }
 }
+
