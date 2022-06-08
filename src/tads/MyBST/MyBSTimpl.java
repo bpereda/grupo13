@@ -1,5 +1,7 @@
 package tads.MyBST;
 
+import tads.MyLinkedList.Node;
+
 public class MyBSTimpl<K extends Comparable<K>,T> implements MyBinarySearchTree<K,T> {
     private NodeBST<K,T> root;
 
@@ -51,6 +53,32 @@ public class MyBSTimpl<K extends Comparable<K>,T> implements MyBinarySearchTree<
 
     }
 
+    private NodeBST<K,T> delete(K key,T data,NodeBST<K,T> root){
+
+          }
+
+    private K getMin(NodeBST<K,T> root){
+        K result = null;
+
+        if (root.getLeftChild()==null){
+            result = root.getKey();
+        }else {
+            result = getMin(root.getLeftChild());
+        }
+        return result;
+    }
+
+    private K getMax(NodeBST<K,T> root){
+        K result = null;
+
+        if(root.getRightChild() == null){
+            result = root.getKey();
+        }else {
+            result = getMax(root.getRightChild());
+        }
+        return result;
+    }
+
     @Override
     public void preOrden(){
         preOrden(root);
@@ -96,7 +124,7 @@ public class MyBSTimpl<K extends Comparable<K>,T> implements MyBinarySearchTree<
     }
 
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         MyBinarySearchTree arbol = new MyBSTimpl();
         arbol.insert(6,6);
         arbol.insert(2,2);
@@ -107,6 +135,9 @@ public class MyBSTimpl<K extends Comparable<K>,T> implements MyBinarySearchTree<
         arbol.insert(7,7);
 
         arbol.preOrden();
+        //System.out.println(arbol);
+        //arbol.delete(7);
+        //arbol.preOrden();
 
-    }*/
+    }
 }
