@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/harTADs.iml" filepath="$PROJECT_DIR$/harTADs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" filepath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/harTADs.iml" filepath="$PROJECT_DIR$/.idea/harTADs.iml" />
     </modules>
   </component>
 </project>
