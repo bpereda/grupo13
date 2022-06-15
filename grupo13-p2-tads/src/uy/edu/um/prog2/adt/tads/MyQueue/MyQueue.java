@@ -1,3 +1,5 @@
+package uy.edu.um.prog2.adt.tads.MyQueue;
+
 public interface MyQueue<T> {
 
     void enqueue(T element);

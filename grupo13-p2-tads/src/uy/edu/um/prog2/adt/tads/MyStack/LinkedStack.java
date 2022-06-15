@@ -2,8 +2,10 @@ package uy.edu.um.prog2.adt.tads.MyStack;
 
 import java.util.EmptyStackException;
 
+
 public class LinkedStack<B> implements MyStack<B>{
     private Node<B> top;
+    public int size;
 
     public LinkedStack() {
 
@@ -19,7 +21,7 @@ public class LinkedStack<B> implements MyStack<B>{
             temp.setNext(top);
             top = temp;
         }
-
+        size++;
     }
 
     @Override
@@ -29,6 +31,7 @@ public class LinkedStack<B> implements MyStack<B>{
         }else if (top == null){
             throw new EmptyStackException();
         }
+        size--;
     }
 
     @Override

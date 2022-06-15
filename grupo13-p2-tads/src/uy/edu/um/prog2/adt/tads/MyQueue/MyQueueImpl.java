@@ -1,8 +1,10 @@
+package uy.edu.um.prog2.adt.tads.MyQueue;
+
 public class MyQueueImpl<T> implements MyQueue<T>{
 
     private Node first;
     private Node last;
-    int size = 0;
+    public int size = 0;
 
     @Override
     public void enqueue(T element) {
@@ -35,7 +37,7 @@ public class MyQueueImpl<T> implements MyQueue<T>{
             this.first = this.first.getNext();
         }
 
-        return (T) buscado;
+        return (T) buscado.getValue();
     }
 
     @Override

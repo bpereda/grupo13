@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="ultima version">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tads/MyBST/NodeBST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tads/MyLinkedList/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tads/MyQueue/MyQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tads/MyQueue/MyQueueImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tads/MyQueue/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tads/MyStack/MyStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tads/MyStack/Node.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyQueueImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyStackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/NodeHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_14_2022_11_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_14_2022_11_16_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/EmptyQueueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/EmptyQueueException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueueImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueueImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -58,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/grupo13-p2-obligatorio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,10 +76,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\agust\IdeaProjects\grupo13\grupo13-p2-tads\src\uy\edu\um\prog2\adt\tads" />
       <recent name="C:\Users\belen\OneDrive\Escritorio\harTADs\grupo13-p2-tads" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="uy.edu.um.prog2.adt.tads.MyQueue" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.MyLinkedListTest">
@@ -111,7 +121,7 @@
       </method>
     </configuration>
     <configuration default="true" type="Java Scratch">
-      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/IdeaProjects/PrimerParcial2021" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../PrimerParcial2021" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <shortenClasspath name="NONE" />
       <method v="2">
@@ -150,6 +160,7 @@
       <workItem from="1654985236705" duration="523000" />
       <workItem from="1654985786032" duration="4766000" />
       <workItem from="1655258410041" duration="1553000" />
+      <workItem from="1655260677445" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="ultima version">
       <created>1655258786118</created>
