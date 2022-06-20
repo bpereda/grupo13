@@ -48,11 +48,41 @@ public class MyBSTimpl<K extends Comparable<K>,T> implements MyBinarySearchTree<
 
     @Override
     public void delete(K key) {
+        root = delete(root,key);
 
     }
 
-    private NodeBST<K,T> delete(K key){
-        int value =
+    private NodeBST<K,T> delete(NodeBST<K,T> root, K key){
+
+        if (root == null) {
+            return null;
+        }else if (key.compareTo(root.getKey()) < 0){
+
+            root.setLeftChild(delete(root.getLeftChild(),key));
+
+        }else if (key.compareTo(root.getKey())> 0){
+
+            root.setRightChild(delete(root.getRightChild(),key));
+
+        }else {
+            if (root.getLeftChild() == null && root.getRightChild() == null){
+
+                return null;
+
+            }else if (root.getRightChild() == null){
+
+                return root.getLeftChild();
+
+            }else if (root.getLeftChild() == null){
+
+                return root.getRightChild();
+
+            }else {
+                root.setKey(getMax(root.getLeftChild()));
+                root.setLeftChild(delete(root.getLeftChild(),root.getKey()));
+            }
+        }
+        return root;
     }
 
     private K getMin(NodeBST<K,T> root){
@@ -133,9 +163,8 @@ public class MyBSTimpl<K extends Comparable<K>,T> implements MyBinarySearchTree<
         arbol.insert(7,7);
 
         arbol.preOrden();
-        //System.out.println(arbol);
-        //arbol.delete(7);
-        //arbol.preOrden();
-
+        arbol.delete(2);
+        System.out.println();
+        arbol.preOrden();
     }
 }
