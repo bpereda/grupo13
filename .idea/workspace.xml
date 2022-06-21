@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="ultima version">
-      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyHashImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_14_2022_11_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_14_2022_11_16_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" afterDir="false" />
+    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="Arregle Hash e hice Tests.">
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Style.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/cerveza.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/EmptyQueueException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/MyQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/MyQueueImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyBST/MyBSTimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyBST/MyBSTimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +185,7 @@
       <workItem from="1654985786032" duration="4766000" />
       <workItem from="1655258410041" duration="1553000" />
       <workItem from="1655260677445" duration="1153000" />
-      <workItem from="1655749675680" duration="382000" />
+      <workItem from="1655749675680" duration="9410000" />
     </task>
     <task id="LOCAL-00001" summary="ultima version">
       <created>1655258786118</created>
@@ -184,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655258786118</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Arregle Hash e hice Tests.">
+      <created>1655750203644</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655750203644</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +220,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ultima version" />
-    <option name="LAST_COMMIT_MESSAGE" value="ultima version" />
+    <MESSAGE value="Arregle Hash e hice Tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Arregle Hash e hice Tests." />
   </component>
 </project>
