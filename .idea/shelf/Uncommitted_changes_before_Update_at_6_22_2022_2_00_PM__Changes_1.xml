@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM_[Changes]1" date="1655917258593" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/22/2022 2:00 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.class" />
+    <option name="AFTER_PATH" value="out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM_[Changes]1/LinkedStack.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyBST/MyBSTimpl.class" />
+    <option name="AFTER_PATH" value="out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyBST/MyBSTimpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM_[Changes]1/MyBSTimpl.class" />
+  </binary>
+</changelist>

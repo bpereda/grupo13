@@ -1,0 +1,139 @@
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package uy.edu.um.prog2.adt.tads.MyHash;\r\n\r\npublic interface MyHash<Key, Value> {\r\n\r\n    void put(Key K, Value V);\r\n\r\n    Value get(Key k);\r\n\r\n    void remove(Key K);\r\n\r\n    int size();\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java	
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java	
+@@ -10,4 +10,5 @@
+ 
+     int size();
+ 
++
+ }
+Index: grupo13-p2-obligatorio/src/Brewery.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Brewery {\r\n\r\n    private long id;\r\n    private String name;\r\n\r\n    public Brewery(int id, String name) {\r\n        this.id = id;\r\n        this.name = name;\r\n    }\r\n\r\n    public long getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/Brewery.java b/grupo13-p2-obligatorio/src/Brewery.java
+--- a/grupo13-p2-obligatorio/src/Brewery.java	
++++ b/grupo13-p2-obligatorio/src/Brewery.java	
+@@ -1,3 +1,5 @@
++import java.util.Objects;
++
+ public class Brewery {
+ 
+     private long id;
+@@ -23,4 +25,17 @@
+     public void setName(String name) {
+         this.name = name;
+     }
++
++    @Override
++    public boolean equals(Object o) {
++        if (this == o) return true;
++        if (!(o instanceof Brewery)) return false;
++        Brewery brewery = (Brewery) o;
++        return id == brewery.id ;
++    }
++
++    @Override
++    public int hashCode() {
++        return Objects.hash(name);
++    }
+ }
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package uy.edu.um.prog2.adt.tads.MyHash;\r\n\r\npublic class MyHashImpl<Key, Value> implements MyHash<Key, Value> {\r\n\r\n    private NodeHashTable<Key, Value>[] elements = new NodeHashTable[INITIAL_SIZE];\r\n    private final static int INITIAL_SIZE = 10;\r\n    public int load;\r\n    private final static float LOAD_FACTOR = 0.8f;\r\n\r\n    public void MyHashTableImpl()\r\n    {\r\n        this.elements = new NodeHashTable[INITIAL_SIZE];\r\n        load = 0;\r\n    }\r\n\r\n    public NodeHashTable<Key, Value>[] getElements() {\r\n        return elements;\r\n    }\r\n\r\n    public void setElements(NodeHashTable<Key, Value>[] elements) {\r\n        this.elements = elements;\r\n    }\r\n\r\n    public int getLoad() {\r\n        return load;\r\n    }\r\n\r\n    public void setLoad(int load) {\r\n        this.load = load;\r\n    }\r\n\r\n    @Override\r\n    public void put(Key K, Value V)\r\n    {\r\n        int position = K.hashCode() %  elements.length;\r\n        if (elements[position] == null || elements[position].isDeleted()\r\n                || elements[position].getKey().equals(K))\r\n        {\r\n            NodeHashTable<Key, Value> nodo = new NodeHashTable<>(K,V);\r\n            elements[position] = nodo;\r\n        }else\r\n        {\r\n            int nroColision = 1;\r\n            int newPosition = 0;\r\n\r\n            do {\r\n                nroColision++;\r\n                newPosition = (K.hashCode() + colision(nroColision)) % elements.length;\r\n            } while(elements[newPosition]!=null && !elements[newPosition].isDeleted()\r\n                    && nroColision < elements.length);\r\n\r\n            if(nroColision < elements.length)\r\n            {\r\n                NodeHashTable<Key, Value> node = new NodeHashTable<>(K,V);\r\n                elements[newPosition] = node; // Aca YO cambie position por new position\r\n            }\r\n        }\r\n        load++;\r\n        // me fijo lo del factor de carga\r\n        if (load >= elements.length*LOAD_FACTOR) //relacion entre largo y elementos cargados\r\n        {\r\n            rehash(elements.length*2);\r\n        }\r\n    }\r\n\r\n    private void rehash(int newSize)\r\n    {\r\n        NodeHashTable<Key, Value>[] newElements = new NodeHashTable[newSize];\r\n        NodeHashTable<Key, Value>[] oldElements = elements;\r\n        elements = newElements;\r\n        for (int i = 0; i<elements.length; i++)\r\n        {\r\n            if (elements[i] != null && !elements[i].isDeleted())\r\n            {\r\n                put(elements[i].getKey(), elements[i].getValue());\r\n            }\r\n        }\r\n    }\r\n\r\n    private int colision(int intento)\r\n    {\r\n        return intento;\r\n    }\r\n\r\n    @Override\r\n    public Value get(Key k) {\r\n\r\n        int posititon = k.hashCode() % elements.length;\r\n        Value exit = null;\r\n        if (this.elements[posititon] != null)\r\n        {\r\n            if (!this.elements[posititon].isDeleted()\r\n                    && this.elements[posititon].getKey().equals(k))\r\n            {\r\n                // encontre el valor\r\n                exit = elements[posititon].getValue();\r\n            }else{\r\n\r\n                //pudo haber una colision\r\n                int nroColision = 1;\r\n                int newPosition = 0;\r\n\r\n                do {\r\n                    nroColision++;\r\n                    newPosition = (k.hashCode() + colision(nroColision)) % elements.length;\r\n                } while(elements[newPosition]!=null && !elements[newPosition].isDeleted()\r\n                        && nroColision < elements.length);\r\n                if(nroColision < elements.length)\r\n                {\r\n                    if(elements[newPosition]!=null && !elements[newPosition].isDeleted())\r\n                    {\r\n                        exit = this.elements[newPosition].getValue();\r\n                    }\r\n                }\r\n            }\r\n        }\r\n        return exit;\r\n    }\r\n\r\n    @Override\r\n    public void remove(Key K) {\r\n\r\n        int posititon = K.hashCode() % elements.length;\r\n        if (this.elements[posititon] != null) {\r\n            if (!this.elements[posititon].isDeleted()\r\n                    && this.elements[posititon].getKey().equals(K)) {\r\n                elements[posititon].setDeleted(true);\r\n                this.load--;\r\n            } else {\r\n                int nroColision = 1;\r\n                int newPosition = 0;\r\n                do {\r\n                    nroColision++;\r\n                    newPosition = (K.hashCode() + colision(nroColision)) % elements.length;\r\n                } while (elements[newPosition] != null && nroColision < elements.length && !elements[newPosition].getKey().equals(K));\r\n\r\n                if (elements[newPosition] != null && nroColision < elements.length) {\r\n                    elements[newPosition].setDeleted(true);\r\n                    this.load--;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n\r\n    @Override\r\n    public int size() {\r\n        return elements.length;\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java	
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java	
+@@ -2,7 +2,7 @@
+ 
+ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
+ 
+-    private NodeHashTable<Key, Value>[] elements = new NodeHashTable[INITIAL_SIZE];
++    public NodeHashTable<Key, Value>[] elements = new NodeHashTable[INITIAL_SIZE];
+     private final static int INITIAL_SIZE = 10;
+     public int load;
+     private final static float LOAD_FACTOR = 0.8f;
+@@ -148,6 +148,4 @@
+         return elements.length;
+     }
+ 
+-
+-
+ }
+Index: grupo13-p2-obligatorio/src/CargadeDatos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/CargadeDatos.java b/grupo13-p2-obligatorio/src/CargadeDatos.java
+new file mode 100644
+--- /dev/null	
++++ b/grupo13-p2-obligatorio/src/CargadeDatos.java	
+@@ -0,0 +1,53 @@
++import java.io.BufferedReader;
++import java.io.FileNotFoundException;
++import java.io.FileReader;
++import java.io.IOException;
++import java.sql.Timestamp;
++import java.text.Format;
++import java.text.SimpleDateFormat;
++import java.util.Date;
++
++import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
++import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
++import uy.edu.um.prog2.adt.tads.MyQueue.MyQueue;
++import uy.edu.um.prog2.adt.tads.MyQueue.MyQueueImpl;
++
++
++public class CargadeDatos {
++
++    public static void main(String[] args) {
++        String path = "C:\\Users\\belen\\OneDrive - Universidad de Montevideo\\Facultad\\Tercer Semestre\\Programación II\\Obligatorio2022\\2022_obligatorio_dataset\\beer_dataset_test.csv";
++        String line ="";
++        MyHash<Integer,Brewery> breweries = new MyHashImpl();
++        MyHash<Integer,User> users = new MyHashImpl<>();
++        MyQueue<Style> styles = new MyQueueImpl<>();
++        MyHash<Integer,Beer> beers = new MyHashImpl<>();
++
++        try{
++            BufferedReader br = new BufferedReader (new FileReader(path));
++            br.readLine();
++
++            while((line = br.readLine()) != null){
++                String[] values = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
++                Timestamp ts = new Timestamp(Long.parseLong(values[3]));
++                Date date = new Date(ts.getTime());
++                User user = new User(values[7]);
++                Beer beer = new Beer(values[11],Long.parseLong(values[13]),Double.parseDouble(values[12]));
++                Style style = new Style(values[8]);
++                Review review = new Review(Long.parseLong(values[0]),date,Double.parseDouble(values[4]),Double.parseDouble(values[5]),Double.parseDouble(values[6]),Double.parseDouble(values[10]),style);
++                Brewery brewery = new Brewery(Integer.parseInt(values[1]),values[2]);
++                breweries.put(Integer.valueOf(values[1]),brewery);
++                users.put(Integer.valueOf(values[0]),user);
++
++
++
++
++            }
++        } catch (FileNotFoundException e){
++            e.printStackTrace();
++        }catch (IOException e) {
++            e.printStackTrace();
++        }
++
++    }
++}

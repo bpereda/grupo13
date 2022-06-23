@@ -1,0 +1,152 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"56172931-c0bc-492c-9c3c-35e5b53cee95\" name=\"Changes\" comment=\"ultima version\">\r\n      <change afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/Test/MyQueueImplTest.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/Test/MyStackTest.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/NodeHashTable.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_14_2022_11_16_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_14_2022_11_16_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/EmptyQueueException.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/EmptyQueueException.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueue.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueue.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueueImpl.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueueImpl.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/Node.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/Node.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2ARum8SL7xcaY41hTeHP9l1nUcU\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"Downloaded.Files.Path.Enabled\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Annotations\" value=\"false\" />\r\n    <property name=\"Repository.Attach.JavaDocs\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Sources\" value=\"false\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs.protractor.protractor_package\" value=\"\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"Settings.JavaScript\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\agust\\IdeaProjects\\grupo13\\grupo13-p2-tads\\src\\uy\\edu\\um\\prog2\\adt\\tads\" />\r\n      <recent name=\"C:\\Users\\belen\\OneDrive\\Escritorio\\harTADs\\grupo13-p2-tads\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n      <recent name=\"uy.edu.um.prog2.adt.tads.MyQueue\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.MyLinkedListTest\">\r\n    <configuration name=\"All in grupo13-p2-tads\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"package\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyHeapImplTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\".*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MyHeapImplTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyLinkedListTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MyLinkedListTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Java Scratch\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"$PROJECT_DIR$/../PrimerParcial2021\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JavaScriptNodeJsTraceType\" factoryName=\"Spy-js for Node.js\" config=\"\" node=\"project\" node-params=\"\" app=\"\" app-params=\"\" working-dir=\"\" proxy-port=\"3547\" pass-parent-env=\"true\" limits=\"1,3,3,50\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Remote\">\r\n      <option name=\"USE_SOCKET_TRANSPORT\" value=\"true\" />\r\n      <option name=\"SERVER_MODE\" value=\"false\" />\r\n      <option name=\"SHMEM_ADDRESS\" />\r\n      <option name=\"HOST\" value=\"localhost\" />\r\n      <option name=\"PORT\" value=\"5005\" />\r\n      <option name=\"AUTO_RESTART\" value=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.MyLinkedListTest\" />\r\n        <item itemvalue=\"JUnit.MyHeapImplTest\" />\r\n        <item itemvalue=\"JUnit.All in grupo13-p2-tads\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"56172931-c0bc-492c-9c3c-35e5b53cee95\" name=\"Changes\" comment=\"\" />\r\n      <created>1654984875279</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1654984875279</updated>\r\n      <workItem from=\"1654984879871\" duration=\"341000\" />\r\n      <workItem from=\"1654985236705\" duration=\"523000\" />\r\n      <workItem from=\"1654985786032\" duration=\"4766000\" />\r\n      <workItem from=\"1655258410041\" duration=\"1553000\" />\r\n      <workItem from=\"1655260677445\" duration=\"1153000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"ultima version\">\r\n      <created>1655258786118</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655258786118</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"ultima version\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ultima version\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,20 +4,21 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="ultima version">
+-      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyQueueImplTest.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyStackTest.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/NodeHashTable.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_14_2022_11_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_14_2022_11_16_PM__Changes_.xml" afterDir="false" />
++    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="arreglo bst">
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Main.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Style.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/EmptyQueueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/EmptyQueueException.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueue.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueueImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/MyQueueImpl.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyQueue/Node.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/cerveza.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/EmptyQueueException.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/MyQueue.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/MyQueueImpl.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/Node.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyBST/MyBSTimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyBST/MyBSTimpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyStack/LinkedStack.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,7 +28,6 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Interface" />
+         <option value="Class" />
+       </list>
+     </option>
+@@ -63,7 +63,7 @@
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/grupo13-p2-obligatorio" />
+     <property name="node.js.detected.package.eslint" value="true" />
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+@@ -76,18 +76,26 @@
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+-      <recent name="C:\Users\agust\IdeaProjects\grupo13\grupo13-p2-tads\src\uy\edu\um\prog2\adt\tads" />
+       <recent name="C:\Users\belen\OneDrive\Escritorio\harTADs\grupo13-p2-tads" />
+     </key>
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="" />
+-    </key>
+-    <key name="CopyClassDialog.RECENTS_KEY">
+-      <recent name="" />
+-      <recent name="uy.edu.um.prog2.adt.tads.MyQueue" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="JUnit.MyLinkedListTest">
++  <component name="RunManager" selected="Application.MyBSTimpl">
++    <configuration name="MyBSTimpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.adt.tads.MyBST.MyBSTimpl" />
++      <module name="grupo13-p2-tads" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="uy.edu.um.prog2.adt.tads.MyBST.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <configuration name="All in grupo13-p2-tads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="grupo13-p2-tads" />
+       <option name="PACKAGE_NAME" value="" />
+@@ -121,7 +129,7 @@
+       </method>
+     </configuration>
+     <configuration default="true" type="Java Scratch">
+-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../PrimerParcial2021" />
++      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/IdeaProjects/PrimerParcial2021" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+       <shortenClasspath name="NONE" />
+       <method v="2">
+@@ -142,6 +150,7 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.MyBSTimpl" />
+         <item itemvalue="JUnit.MyLinkedListTest" />
+         <item itemvalue="JUnit.MyHeapImplTest" />
+         <item itemvalue="JUnit.All in grupo13-p2-tads" />
+@@ -160,7 +169,12 @@
+       <workItem from="1654985236705" duration="523000" />
+       <workItem from="1654985786032" duration="4766000" />
+       <workItem from="1655258410041" duration="1553000" />
+-      <workItem from="1655260677445" duration="1153000" />
++      <workItem from="1655379409669" duration="602000" />
++      <workItem from="1655394682882" duration="4279000" />
++      <workItem from="1655516763483" duration="599000" />
++      <workItem from="1655683229633" duration="4516000" />
++      <workItem from="1655834919262" duration="9000" />
++      <workItem from="1655837873693" duration="1593000" />
+     </task>
+     <task id="LOCAL-00001" summary="ultima version">
+       <created>1655258786118</created>
+@@ -169,7 +183,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1655258786118</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="arreglo bst">
++      <created>1655685407384</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1655685407384</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -188,6 +209,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="ultima version" />
+-    <option name="LAST_COMMIT_MESSAGE" value="ultima version" />
++    <MESSAGE value="arreglo bst" />
++    <option name="LAST_COMMIT_MESSAGE" value="arreglo bst" />
+   </component>
+ </project>
+\ No newline at end of file

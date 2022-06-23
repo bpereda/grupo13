@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM_[Changes]1" date="1655946589569" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/22/2022 10:09 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/harTADs/Brewery.class" />
+    <option name="AFTER_PATH" value="out/production/harTADs/Brewery.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM_[Changes]1/Brewery.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.class" />
+    <option name="AFTER_PATH" value="out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM_[Changes]1/MyHashImpl.class" />
+  </binary>
+</changelist>

@@ -1,0 +1,757 @@
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package uy.edu.um.prog2.adt.tads.MyHash;\r\n\r\npublic interface MyHash<Key, Value> {\r\n\r\n    void put(Key K, Value V);\r\n\r\n    Value get(Key k);\r\n\r\n    void remove(Key K);\r\n\r\n    int size();\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java	(date 1656014761929)
+@@ -10,4 +10,9 @@
+ 
+     int size();
+ 
++    void set(Key,Value);
++
++
++
++
+ }
+Index: grupo13-p2-tads/Test/MyHeapImplTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import org.junit.jupiter.api.Test;\r\nimport uy.edu.um.prog2.adt.tads.MyHeap.MyHeap;\r\nimport uy.edu.um.prog2.adt.tads.MyHeap.MyHeapImpl;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nclass MyHeapImplTest {\r\n\r\n    @Test\r\n    void testInsert() {\r\n        MyHeap<Integer> aHeap = new MyHeapImpl<>();\r\n        aHeap.insert(5);\r\n        aHeap.insert(2);\r\n        aHeap.insert(5);\r\n        aHeap.insert(1);\r\n        assertEquals(1,aHeap.delete());\r\n        assertEquals(2, aHeap.delete());\r\n        assertEquals(5,aHeap.delete());\r\n    }\r\n\r\n    @Test\r\n    void testInsert2(){\r\n        Integer[] values = {2,8,2,3,8,10,6,1,2,9,4};\r\n        MyHeap<Integer> aHeap = new MyHeapImpl<>(values);\r\n        assertEquals(1,aHeap.delete());\r\n        assertEquals(2,aHeap.delete());\r\n        assertEquals(2,aHeap.delete());\r\n        assertEquals(2,aHeap.delete());\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/Test/MyHeapImplTest.java b/grupo13-p2-tads/Test/MyHeapImplTest.java
+--- a/grupo13-p2-tads/Test/MyHeapImplTest.java	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/grupo13-p2-tads/Test/MyHeapImplTest.java	(date 1655949881716)
+@@ -8,25 +8,13 @@
+ 
+     @Test
+     void testInsert() {
+-        MyHeap<Integer> aHeap = new MyHeapImpl<>();
+-        aHeap.insert(5);
+-        aHeap.insert(2);
+-        aHeap.insert(5);
+-        aHeap.insert(1);
+-        assertEquals(1,aHeap.delete());
+-        assertEquals(2, aHeap.delete());
+-        assertEquals(5,aHeap.delete());
++        MyHeap<Integer,Integer> aHeap = new MyHeapImpl<>();
++        aHeap.insert(2,2);
++        aHeap.insert(5,5);
++        aHeap.insert(1,1);
++        assertEquals(1, aHeap.delete().getKey());
++        assertEquals(2, aHeap.delete().getKey());
++        assertEquals(5, aHeap.delete().getKey());
+     }
+ 
+-    @Test
+-    void testInsert2(){
+-        Integer[] values = {2,8,2,3,8,10,6,1,2,9,4};
+-        MyHeap<Integer> aHeap = new MyHeapImpl<>(values);
+-        assertEquals(1,aHeap.delete());
+-        assertEquals(2,aHeap.delete());
+-        assertEquals(2,aHeap.delete());
+-        assertEquals(2,aHeap.delete());
+-
+-
+-    }
+ }
+\ No newline at end of file
+Index: .idea/libraries/commons_lang3_3_12_0.xml
+===================================================================
+diff --git a/.idea/libraries/commons_lang3_3_12_0.xml b/.idea/libraries/commons_lang3_3_12_0.xml
+deleted file mode 100644
+--- a/.idea/libraries/commons_lang3_3_12_0.xml	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ /dev/null	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
+@@ -1,9 +0,0 @@
+-<component name="libraryTable">
+-  <library name="commons-lang3-3.12.0">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/Downloads/commons-lang3-3.12.0.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/opencsv_5_6.xml
+===================================================================
+diff --git a/.idea/libraries/opencsv_5_6.xml b/.idea/libraries/opencsv_5_6.xml
+deleted file mode 100644
+--- a/.idea/libraries/opencsv_5_6.xml	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ /dev/null	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
+@@ -1,9 +0,0 @@
+-<component name="libraryTable">
+-  <library name="opencsv-5.6">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/Downloads/opencsv-5.6.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/MyArrayList.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/MyArrayList.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/MyArrayList.java
+new file mode 100644
+--- /dev/null	(date 1656011422359)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/MyArrayList.java	(date 1656011422359)
+@@ -0,0 +1,15 @@
++package uy.edu.um.prog2.adt.tads.MyArrayList;
++
++public interface MyArrayList<T> {
++    void add(T value);
++    int size();
++    T get(int position) throws IndexOutOfBoundsException;
++    void set(int position,T value) throws IndexOutOfBoundsException;
++    void remove(int position) throws IndexOutOfBoundsException;
++    void remove(T value);
++    boolean contains(T value);
++    int getIndex(T value);
++
++
++
++}
+Index: grupo13-p2-obligatorio/src/CargaDeDatos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import com.opencsv.CSVReader;\r\nimport com.opencsv.exceptions.CsvValidationException;\r\nimport uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;\r\nimport java.io.FileReader;\r\nimport java.io.IOException;\r\nimport java.util.Date;\r\n\r\npublic class CargaDeDatos {\r\n    static MyHashImpl<Integer, Beer> BeerHash = new MyHashImpl();\r\n    static MyHashImpl<Long, Brewery> BreweryHash = new MyHashImpl<Long, Brewery>();\r\n    static MyHashImpl<Long, Review> ReviewHash = new MyHashImpl<Long, Review>();\r\n    MyHashImpl<Long, Style> StyleHash = new MyHashImpl<Long, Style>();\r\n\r\n    public static void Carga() throws IOException, CsvValidationException {\r\n\r\n        try {\r\n\r\n            FileReader fileReader = new FileReader(\"C:\\\\Users\\\\agust\\\\Downloads\\\\2022_obligatorio_dataset\\\\beer_dataset_test.csv\");\r\n            CSVReader csvReader = new CSVReader(fileReader);\r\n            //BufferedReader br = new BufferedReader(fileReader);\r\n            csvReader.readNext();\r\n            String[] vectorStrings;\r\n            //String[] linea;\r\n            long tiempo_inicial = System.currentTimeMillis();\r\n            long tiempo_final;\r\n            Chequeos chequeo = new Chequeos();\r\n\r\n            while ((vectorStrings = csvReader.readNext()) != null) {\r\n\r\n                //System.out.println(vectorStrings[12]);\r\n                //vectorStrings = csvReader.readNext();\r\n                //String[] vectorStrings = linea.split(\",\");\r\n\r\n                if (chequeo.chequeoDatos(vectorStrings)) {\r\n                    String id_review_str = vectorStrings[0];\r\n                    Long id_review = Long.parseLong(id_review_str);\r\n                    String brewery_id_str = vectorStrings[1];\r\n                    Long brewery_id = Long.parseLong(brewery_id_str);\r\n                    String brewery_name = vectorStrings[2];\r\n                    String review_time_str = vectorStrings[3];\r\n                    Date review_date = new Date(review_time_str);\r\n                    String review_overall_str = vectorStrings[4];\r\n                    Double review_overall = Double.parseDouble(review_overall_str);\r\n                    String review_aroma_str = vectorStrings[5];\r\n                    Double review_aroma = Double.parseDouble(review_aroma_str);\r\n                    String review_appearance_str = vectorStrings[6];\r\n                    Double review_appearance = Double.parseDouble(review_appearance_str);\r\n                    String review_profilename = vectorStrings[7];\r\n                    String beer_style = vectorStrings[8];\r\n                    String review_palate_str = vectorStrings[9];\r\n                    Double review_palate = Double.parseDouble(review_palate_str);\r\n                    String review_taste_str = vectorStrings[10];\r\n                    Double review_taste = Double.parseDouble(review_taste_str);\r\n                    String beer_name = vectorStrings[11];\r\n                    String beer_abv_str = vectorStrings[12];\r\n                    Double beer_abv = Double.parseDouble(beer_abv_str);\r\n                    String beer_id_str = vectorStrings[13];\r\n                    Long beer_id = Long.parseLong(beer_id_str);\r\n                    User user = new User(review_profilename);\r\n                    Style style = new Style(beer_style);\r\n\r\n                    Brewery brewery = new Brewery(Math.toIntExact(brewery_id), brewery_name);\r\n                    BreweryHash.put(brewery_id, brewery);\r\n\r\n                    Review review = new Review(id_review, review_date, review_overall, review_aroma, review_appearance, review_taste, user, brewery);\r\n                    Beer beer = new Beer(beer_name, beer_id, beer_abv);\r\n                    if (BeerHash.get(Math.toIntExact(beer_id))==null){\r\n                        BeerHash.put(Math.toIntExact(beer_id), beer);\r\n                    }else{\r\n                        BeerHash.get(Math.toIntExact(beer_id)).getReviews().put(id_review, review);\r\n                    }\r\n\r\n                    if(BreweryHash.get(brewery_id).getBeers().get(beer_id)==null)\r\n                    {\r\n                            BreweryHash.get(brewery_id).getBeers().put(beer_id, beer);\r\n                    }\r\n\r\n                    tiempo_final = System.currentTimeMillis();\r\n                    //System.out.println(\"Tiempo \"+ (tiempo_final-tiempo_inicial));\r\n\r\n                }\r\n            }\r\n                        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/CargaDeDatos.java b/grupo13-p2-obligatorio/src/CargaDeDatos.java
+--- a/grupo13-p2-obligatorio/src/CargaDeDatos.java	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/grupo13-p2-obligatorio/src/CargaDeDatos.java	(date 1656003119129)
+@@ -1,6 +1,7 @@
+-import com.opencsv.CSVReader;
++/*import com.opencsv.CSVReader;
+ import com.opencsv.exceptions.CsvValidationException;
+ import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
++
+ import java.io.FileReader;
+ import java.io.IOException;
+ import java.util.Date;
+@@ -84,4 +85,4 @@
+             e.printStackTrace();
+         }
+     }
+-}
+\ No newline at end of file
++}*/
+\ No newline at end of file
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package uy.edu.um.prog2.adt.tads.MyHeap;\r\n\r\npublic interface MyHeap<T extends Comparable<T>>{\r\n    void insert(T value);\r\n    T delete();\r\n    int size();\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java	(date 1655948916065)
+@@ -1,8 +1,8 @@
+ package uy.edu.um.prog2.adt.tads.MyHeap;
+ 
+-public interface MyHeap<T extends Comparable<T>>{
+-    void insert(T value);
+-    T delete();
++public interface MyHeap<K extends Comparable<K>,T>{
++    void insert(K key,T data);
++    HeapNode<K,T> delete();
+     int size();
+ 
+ }
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package uy.edu.um.prog2.adt.tads.MyHeap;\r\n\r\nimport java.util.Arrays;\r\n\r\npublic class MyHeapImpl<T extends Comparable<T>> implements MyHeap<T>{\r\n\r\n    private static final int CAPACITY = 10;\r\n    private T[] heap;\r\n    private int size;\r\n\r\n    public MyHeapImpl() {\r\n        this.heap = (T[]) new Comparable[CAPACITY];\r\n        this.size = 0;\r\n    }\r\n\r\n    public MyHeapImpl(T[] array) {\r\n        heap = (T[]) new Comparable[CAPACITY];\r\n        size = 0;\r\n\r\n        for (T each : array) {\r\n            insert(each);\r\n        }\r\n    }\r\n\r\n    public T[] getHeap() {\r\n        return Arrays.copyOfRange(heap, 1, size + 1);\r\n    }\r\n\r\n    @Override\r\n    public void insert(T value) {\r\n        if (this.size >= heap.length - 1) {\r\n            heap = this.resize();\r\n        }\r\n\r\n        size++;\r\n        heap[size] = value;\r\n        bubbleUp();\r\n    }\r\n\r\n    @Override\r\n    public T delete() {\r\n        T result = peek();\r\n\r\n        swap(1, size);\r\n        heap[size] = null;\r\n        size--;\r\n\r\n        bubbleDown();\r\n\r\n        return result;\r\n    }\r\n\r\n    public boolean isEmpty() {\r\n        return size == 0;\r\n    }\r\n\r\n    public T peek() {\r\n        if (isEmpty()) throw new IllegalStateException();\r\n        return heap[1];\r\n    }\r\n\r\n    @Override\r\n    public int size() {\r\n        return size;\r\n    }\r\n\r\n    private T[] resize() {\r\n        return Arrays.copyOf(heap, heap.length + CAPACITY);\r\n    }\r\n\r\n    private void bubbleUp() {\r\n        int index = size;\r\n\r\n        while (hasParent(index) && (getParent(index).compareTo(heap[index]) > 0)) {\r\n            swap(index, getParentIndex(index));\r\n            index = getParentIndex(index);\r\n        }\r\n\r\n    }\r\n\r\n    private void bubbleDown() {\r\n        int index = 1;\r\n\r\n        while (hasLeftChild(index)) {\r\n            int smaller = getLeftIndex(index);\r\n            if (hasRightChild(index) && heap[getLeftIndex(index)].compareTo(heap[getRightIndex(index)]) > 0) {\r\n                smaller = getRightIndex(index);\r\n            }\r\n            if (heap[index].compareTo(heap[smaller]) > 0) {\r\n                swap(index, smaller);\r\n            }\r\n            else break;\r\n\r\n            index = smaller;\r\n        }\r\n\r\n    }\r\n\r\n    private boolean hasParent(int i) {\r\n        return i > 1;\r\n    }\r\n\r\n    private int getLeftIndex(int i) {\r\n        return i * 2;\r\n    }\r\n\r\n    private int getRightIndex(int i) {\r\n        return i * 2 + 1;\r\n    }\r\n\r\n    private boolean hasLeftChild(int i) {\r\n        return getLeftIndex(i) <= size;\r\n    }\r\n\r\n    private boolean hasRightChild(int i) {\r\n        return getRightIndex(i) <= size;\r\n    }\r\n\r\n    private int getParentIndex(int i) {\r\n        return i / 2;\r\n    }\r\n\r\n    private T getParent(int i) {\r\n        return heap[getParentIndex(i)];\r\n    }\r\n\r\n    private void swap(int index1, int index2) {\r\n        T temp = heap[index1];\r\n        heap[index1] = heap[index2];\r\n        heap[index2] = temp;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java	(date 1655996093605)
+@@ -1,45 +1,62 @@
+ package uy.edu.um.prog2.adt.tads.MyHeap;
+ 
++import uy.edu.um.prog2.adt.tads.MyArrayList.ArrayList;
++import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
++
+ import java.util.Arrays;
+ 
+-public class MyHeapImpl<T extends Comparable<T>> implements MyHeap<T>{
++public class MyHeapImpl<K extends Comparable<K>,T> implements MyHeap<K,T>{
++    @Override
++    public void insert(K key, T data) {
++
++    }
+ 
+-    private static final int CAPACITY = 10;
+-    private T[] heap;
++    @Override
++    public HeapNode<K, T> delete() {
++        return null;
++    }
++
++    @Override
++    public int size() {
++        return 0;
++    }
++    /*private static final int CAPACITY = 10;
++    private MyArrayList heap = new ArrayList();
+     private int size;
+ 
+     public MyHeapImpl() {
+-        this.heap = (T[]) new Comparable[CAPACITY];
++        HeapNode<K, T>[] heap = (HeapNode<K, T>)new Comparable[CAPACITY];
+         this.size = 0;
+     }
+ 
+-    public MyHeapImpl(T[] array) {
+-        heap = (T[]) new Comparable[CAPACITY];
++    public MyHeapImpl(HeapNode<K,T>[] array) {
++        HeapNode<K, T>[] heap = new HeapNode<K, T>[CAPACITY];
+         size = 0;
+ 
+-        for (T each : array) {
+-            insert(each);
++        for (HeapNode<K,T> each : array) {
++            insert(each.getKey(),each.getData());
+         }
+     }
+ 
+-    public T[] getHeap() {
++    public HeapNode<K,T>[] getHeap() {
+         return Arrays.copyOfRange(heap, 1, size + 1);
+     }
+ 
+     @Override
+-    public void insert(T value) {
++    public void insert(K value,T data) {
+         if (this.size >= heap.length - 1) {
+             heap = this.resize();
+         }
+ 
+         size++;
+-        heap[size] = value;
++        HeapNode<K,T> newNode = new HeapNode<>(value,data);
++        heap[size] = newNode;
+         bubbleUp();
+     }
+ 
+     @Override
+-    public T delete() {
+-        T result = peek();
++    public HeapNode<K,T> delete() {
++        HeapNode<K,T> result = peek();
+ 
+         swap(1, size);
+         heap[size] = null;
+@@ -54,7 +71,7 @@
+         return size == 0;
+     }
+ 
+-    public T peek() {
++    public HeapNode<K, T> peek() {
+         if (isEmpty()) throw new IllegalStateException();
+         return heap[1];
+     }
+@@ -64,14 +81,14 @@
+         return size;
+     }
+ 
+-    private T[] resize() {
++    private HeapNode<K,T>[] resize() {
+         return Arrays.copyOf(heap, heap.length + CAPACITY);
+     }
+ 
+     private void bubbleUp() {
+         int index = size;
+ 
+-        while (hasParent(index) && (getParent(index).compareTo(heap[index]) > 0)) {
++        while (hasParent(index) && (getParent(index).getKey().compareTo(heap[index].getKey()) > 0)) {
+             swap(index, getParentIndex(index));
+             index = getParentIndex(index);
+         }
+@@ -83,10 +100,10 @@
+ 
+         while (hasLeftChild(index)) {
+             int smaller = getLeftIndex(index);
+-            if (hasRightChild(index) && heap[getLeftIndex(index)].compareTo(heap[getRightIndex(index)]) > 0) {
++            if (hasRightChild(index) && heap[getLeftIndex(index)].getKey().compareTo(heap[getRightIndex(index)].getKey()) > 0) {
+                 smaller = getRightIndex(index);
+             }
+-            if (heap[index].compareTo(heap[smaller]) > 0) {
++            if (heap[index].getKey().compareTo(heap[smaller].getKey()) > 0) {
+                 swap(index, smaller);
+             }
+             else break;
+@@ -120,14 +137,14 @@
+         return i / 2;
+     }
+ 
+-    private T getParent(int i) {
++    private HeapNode<K,T> getParent(int i) {
+         return heap[getParentIndex(i)];
+     }
+ 
+     private void swap(int index1, int index2) {
+-        T temp = heap[index1];
++        HeapNode<K,T> temp = heap[index1];
+         heap[index1] = heap[index2];
+         heap[index2] = temp;
+     }
+-
++*/
+ }
+Index: .idea/harTADs.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/grupo13-p2-obligatorio/Test\" isTestSource=\"true\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/grupo13-p2-obligatorio/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"module\" module-name=\"grupo13-p2-tads\" />\r\n    <orderEntry type=\"library\" name=\"opencsv-5.6\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/harTADs.iml b/.idea/harTADs.iml
+--- a/.idea/harTADs.iml	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/.idea/harTADs.iml	(date 1655947030033)
+@@ -9,6 +9,5 @@
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+     <orderEntry type="module" module-name="grupo13-p2-tads" />
+-    <orderEntry type="library" name="opencsv-5.6" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package uy.edu.um.prog2.adt.tads.MyHash;\r\n\r\npublic class MyHashImpl<Key, Value> implements MyHash<Key, Value> {\r\n\r\n    private NodeHashTable<Key, Value>[] elements = new NodeHashTable[INITIAL_SIZE];\r\n    private final static int INITIAL_SIZE = 10;\r\n    public int load;\r\n    private final static float LOAD_FACTOR = 0.8f;\r\n\r\n    public void MyHashTableImpl()\r\n    {\r\n        this.elements = new NodeHashTable[INITIAL_SIZE];\r\n        load = 0;\r\n    }\r\n\r\n    public NodeHashTable<Key, Value>[] getElements() {\r\n        return elements;\r\n    }\r\n\r\n    public void setElements(NodeHashTable<Key, Value>[] elements) {\r\n        this.elements = elements;\r\n    }\r\n\r\n    public int getLoad() {\r\n        return load;\r\n    }\r\n\r\n    public void setLoad(int load) {\r\n        this.load = load;\r\n    }\r\n\r\n    @Override\r\n    public void put(Key K, Value V)\r\n    {\r\n        int position = K.hashCode() %  elements.length;\r\n        if (elements[position] == null || elements[position].isDeleted()\r\n                || elements[position].getKey().equals(K))\r\n        {\r\n            NodeHashTable<Key, Value> nodo = new NodeHashTable<>(K,V);\r\n            elements[position] = nodo;\r\n        }else\r\n        {\r\n            int nroColision = 1;\r\n            int newPosition = 0;\r\n\r\n            do {\r\n                nroColision++;\r\n                newPosition = (K.hashCode() + colision(nroColision)) % elements.length;\r\n            } while(elements[newPosition]!=null && !elements[newPosition].isDeleted()\r\n                    && nroColision < elements.length);\r\n\r\n            if(nroColision < elements.length)\r\n            {\r\n                NodeHashTable<Key, Value> node = new NodeHashTable<>(K,V);\r\n                elements[newPosition] = node; // Aca YO cambie position por new position\r\n            }\r\n        }\r\n        load++;\r\n        // me fijo lo del factor de carga\r\n        if (load >= elements.length*LOAD_FACTOR) //relacion entre largo y elementos cargados\r\n        {\r\n            rehash(elements.length*2);\r\n        }\r\n    }\r\n\r\n    private void rehash(int newSize)\r\n    {\r\n        NodeHashTable<Key, Value>[] newElements = new NodeHashTable[newSize];\r\n        NodeHashTable<Key, Value>[] oldElements = elements;\r\n        elements = newElements;\r\n        for (int i = 0; i<elements.length; i++)\r\n        {\r\n            if (elements[i] != null && !elements[i].isDeleted())\r\n            {\r\n                put(elements[i].getKey(), elements[i].getValue());\r\n            }\r\n        }\r\n    }\r\n\r\n    private int colision(int intento)\r\n    {\r\n        return intento;\r\n    }\r\n\r\n    @Override\r\n    public Value get(Key k) {\r\n\r\n        int posititon = k.hashCode() % elements.length;\r\n        Value exit = null;\r\n        if (this.elements[posititon] != null)\r\n        {\r\n            if (!this.elements[posititon].isDeleted()\r\n                    && this.elements[posititon].getKey().equals(k))\r\n            {\r\n                // encontre el valor\r\n                exit = elements[posititon].getValue();\r\n            }else{\r\n\r\n                //pudo haber una colision\r\n                int nroColision = 1;\r\n                int newPosition = 0;\r\n\r\n                do {\r\n                    nroColision++;\r\n                    newPosition = (k.hashCode() + colision(nroColision)) % elements.length;\r\n                } while(elements[newPosition]!=null && !elements[newPosition].isDeleted()\r\n                        && nroColision < elements.length);\r\n                if(nroColision < elements.length)\r\n                {\r\n                    if(elements[newPosition]!=null && !elements[newPosition].isDeleted())\r\n                    {\r\n                        exit = this.elements[newPosition].getValue();\r\n                    }\r\n                }\r\n            }\r\n        }\r\n        return exit;\r\n    }\r\n\r\n    @Override\r\n    public void remove(Key K) {\r\n\r\n        int posititon = K.hashCode() % elements.length;\r\n        if (this.elements[posititon] != null) {\r\n            if (!this.elements[posititon].isDeleted()\r\n                    && this.elements[posititon].getKey().equals(K)) {\r\n                elements[posititon].setDeleted(true);\r\n                this.load--;\r\n            } else {\r\n                int nroColision = 1;\r\n                int newPosition = 0;\r\n                do {\r\n                    nroColision++;\r\n                    newPosition = (K.hashCode() + colision(nroColision)) % elements.length;\r\n                } while (elements[newPosition] != null && nroColision < elements.length && !elements[newPosition].getKey().equals(K));\r\n\r\n                if (elements[newPosition] != null && nroColision < elements.length) {\r\n                    elements[newPosition].setDeleted(true);\r\n                    this.load--;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n\r\n    @Override\r\n    public int size() {\r\n        return elements.length;\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java	(date 1655946578967)
+@@ -2,7 +2,7 @@
+ 
+ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
+ 
+-    private NodeHashTable<Key, Value>[] elements = new NodeHashTable[INITIAL_SIZE];
++    public NodeHashTable<Key, Value>[] elements = new NodeHashTable[INITIAL_SIZE];
+     private final static int INITIAL_SIZE = 10;
+     public int load;
+     private final static float LOAD_FACTOR = 0.8f;
+@@ -148,6 +148,4 @@
+         return elements.length;
+     }
+ 
+-
+-
+ }
+Index: grupo13-p2-tads/grupo13-p2-tads.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/Test\" isTestSource=\"true\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"module-library\" scope=\"TEST\">\r\n      <library name=\"JUnit5.8.1\">\r\n        <CLASSES>\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar!/\" />\r\n        </CLASSES>\r\n        <JAVADOC />\r\n        <SOURCES />\r\n      </library>\r\n    </orderEntry>\r\n    <orderEntry type=\"module-library\">\r\n      <library name=\"JUnit4\">\r\n        <CLASSES>\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/\" />\r\n        </CLASSES>\r\n        <JAVADOC />\r\n        <SOURCES />\r\n      </library>\r\n    </orderEntry>\r\n    <orderEntry type=\"module-library\">\r\n      <library name=\"testng\">\r\n        <CLASSES>\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/testng/testng/7.1.0/testng-7.1.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/com/beust/jcommander/1.72/jcommander-1.72.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/com/google/inject/guice/4.1.0/guice-4.1.0-no_aop.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/com/google/guava/guava/19.0/guava-19.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.21/snakeyaml-1.21.jar!/\" />\r\n        </CLASSES>\r\n        <JAVADOC />\r\n        <SOURCES />\r\n      </library>\r\n    </orderEntry>\r\n    <orderEntry type=\"library\" name=\"commons-lang3-3.12.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"opencsv-5.6\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/grupo13-p2-tads.iml b/grupo13-p2-tads/grupo13-p2-tads.iml
+--- a/grupo13-p2-tads/grupo13-p2-tads.iml	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/grupo13-p2-tads/grupo13-p2-tads.iml	(date 1655947030058)
+@@ -49,7 +49,6 @@
+         <SOURCES />
+       </library>
+     </orderEntry>
+-    <orderEntry type="library" name="commons-lang3-3.12.0" level="project" />
+     <orderEntry type="library" name="opencsv-5.6" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java
+new file mode 100644
+--- /dev/null	(date 1655950082301)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java	(date 1655950082301)
+@@ -0,0 +1,31 @@
++package uy.edu.um.prog2.adt.tads.MyHeap;
++
++public class HeapNode <K,T>  {
++    K key;
++    T data;
++
++    public HeapNode(K key, T data) {
++        this.key = key;
++        this.data = data;
++    }
++
++    public K getKey() {
++        return key;
++    }
++
++    public void setKey(K key) {
++        this.key = key;
++    }
++
++    public T getData() {
++        return data;
++    }
++
++    public void setData(T data) {
++        this.data = data;
++    }
++
++
++
++}
++
+Index: grupo13-p2-obligatorio/src/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import com.opencsv.exceptions.CsvValidationException;\r\n\r\nimport java.io.IOException;\r\nimport java.util.Scanner;\r\n\r\npublic class Menu\r\n    {\r\n    public static void Menu()\r\n    {\r\n        CargaDeDatos CargaDatos = new CargaDeDatos();\r\n        Scanner sc = new Scanner(System.in);\r\n        System.out.println(\"Seleccione una opcion: \");\r\n        System.out.println(\"1. carga de datos.\");\r\n        System.out.println(\"2. Realizar consultas.\");\r\n        System.out.println(\"3. Finaliar programa.\");\r\n        int opcion = sc.nextInt();\r\n        while (opcion!=3)\r\n        {\r\n            if (opcion==1)\r\n            {\r\n                try {\r\n                    CargaDeDatos.Carga();\r\n                } catch (IOException e) {\r\n                } catch (CsvValidationException e) {\r\n                }\r\n\r\n            }else if(opcion==2)\r\n            {\r\n                System.out.println(\"1. Las 10 casas de cerveza con mas resenias en un anio.\");\r\n                System.out.println(\"2. Top 15 catadores con mas reseñas.\");\r\n                System.out.println(\"3. Cantidad de resenias en un rango dado.\");\r\n                System.out.println(\"4. Top 7 cervezas con mejor aroma.\");\r\n                System.out.println(\"5. Top 5 cervezas con mas reviews.\");\r\n                Scanner opcion2 = new Scanner(System.in);\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    public static void main(String[] args)\r\n    {\r\n        Menu menu = new Menu();\r\n        menu.Menu();\r\n    }\r\n\r\n    }
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/Menu.java b/grupo13-p2-obligatorio/src/Menu.java
+--- a/grupo13-p2-obligatorio/src/Menu.java	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/grupo13-p2-obligatorio/src/Menu.java	(date 1655996279677)
+@@ -1,4 +1,4 @@
+-import com.opencsv.exceptions.CsvValidationException;
++/*import com.opencsv.exceptions.CsvValidationException;
+ 
+ import java.io.IOException;
+ import java.util.Scanner;
+@@ -43,4 +43,4 @@
+         menu.Menu();
+     }
+ 
+-    }
+\ No newline at end of file
++    }*/
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"56172931-c0bc-492c-9c3c-35e5b53cee95\" name=\"Changes\" comment=\"arreglo bst\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/libraries/commons_lang3_3_12_0.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/libraries/opencsv_5_6.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/harTADs.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/harTADs.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2ARum8SL7xcaY41hTeHP9l1nUcU\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"Downloaded.Files.Path.Enabled\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Annotations\" value=\"false\" />\r\n    <property name=\"Repository.Attach.JavaDocs\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Sources\" value=\"false\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$USER_HOME$/Downloads/opencsv-5.6.jar\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs.protractor.protractor_package\" value=\"\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Libraries\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"Settings.JavaScript\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\agust\\IdeaProjects\\grupo13\\grupo13-p2-tads\\src\\uy\\edu\\um\\prog2\\adt\\tads\" />\r\n      <recent name=\"C:\\Users\\belen\\OneDrive\\Escritorio\\harTADs\\grupo13-p2-tads\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n      <recent name=\"uy.edu.um.prog2.adt.tads.MyQueue\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Menu\">\r\n    <configuration name=\"CargadeDatos\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CargadeDatos\" />\r\n      <module name=\"harTADs\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Menu\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Menu\" />\r\n      <module name=\"harTADs\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyHashImplTest.get\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MyHashImplTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"get\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyHashImplTest.put\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MyHashImplTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"put\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyHashImplTest.remove\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MyHashImplTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"remove\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Java Scratch\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"$PROJECT_DIR$/../PrimerParcial2021\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JavaScriptNodeJsTraceType\" factoryName=\"Spy-js for Node.js\" config=\"\" node=\"project\" node-params=\"\" app=\"\" app-params=\"\" working-dir=\"\" proxy-port=\"3547\" pass-parent-env=\"true\" limits=\"1,3,3,50\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Remote\">\r\n      <option name=\"USE_SOCKET_TRANSPORT\" value=\"true\" />\r\n      <option name=\"SERVER_MODE\" value=\"false\" />\r\n      <option name=\"SHMEM_ADDRESS\" />\r\n      <option name=\"HOST\" value=\"localhost\" />\r\n      <option name=\"PORT\" value=\"5005\" />\r\n      <option name=\"AUTO_RESTART\" value=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Menu\" />\r\n        <item itemvalue=\"Application.CargadeDatos\" />\r\n        <item itemvalue=\"JUnit.MyHashImplTest.get\" />\r\n        <item itemvalue=\"JUnit.MyHashImplTest.remove\" />\r\n        <item itemvalue=\"JUnit.MyHashImplTest.put\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"56172931-c0bc-492c-9c3c-35e5b53cee95\" name=\"Changes\" comment=\"\" />\r\n      <created>1654984875279</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1654984875279</updated>\r\n      <workItem from=\"1654984879871\" duration=\"341000\" />\r\n      <workItem from=\"1654985236705\" duration=\"523000\" />\r\n      <workItem from=\"1654985786032\" duration=\"4766000\" />\r\n      <workItem from=\"1655258410041\" duration=\"1553000\" />\r\n      <workItem from=\"1655260677445\" duration=\"1153000\" />\r\n      <workItem from=\"1655749675680\" duration=\"9410000\" />\r\n      <workItem from=\"1655918292363\" duration=\"14392000\" />\r\n      <workItem from=\"1655940655617\" duration=\"5620000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"ultima version\">\r\n      <created>1655258786118</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655258786118</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Arregle Hash e hice Tests.\">\r\n      <created>1655750203644</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655750203644</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"ultima version\" />\r\n    <MESSAGE value=\"Arregle Hash e hice Tests.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Arregle Hash e hice Tests.\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NumberFormatException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1a38fe0c628f1aaafe49d61312f0ae74b5e68958)
++++ b/.idea/workspace.xml	(date 1656012646977)
+@@ -5,17 +5,35 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="arreglo bst">
+-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_12_0.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/libraries/opencsv_5_6.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/ArrayList.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/MyArrayList.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/Node.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/harTADs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/harTADs.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_12_0.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/opencsv_5_6.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyHeapImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyHeapImplTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Beer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Beer.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Brewery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Brewery.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Main.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Review.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/test/grupo13-p2-tads/MyHeapImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/grupo13-p2-tads/MyHeapImplTest.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -61,7 +79,7 @@
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/opencsv-5.6.jar" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../opencsv-5.6.jar" />
+     <property name="node.js.detected.package.eslint" value="true" />
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+@@ -85,46 +103,46 @@
+       <recent name="uy.edu.um.prog2.adt.tads.MyQueue" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.Menu">
+-    <configuration name="CargadeDatos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="CargadeDatos" />
+-      <module name="harTADs" />
++  <component name="RunManager" selected="Application.DataLoad">
++    <configuration name="ArrayList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.adt.tads.MyArrayList.ArrayList" />
++      <module name="grupo13-p2-tads" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="uy.edu.um.prog2.adt.tads.MyArrayList.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="Menu" />
++    <configuration name="CargadeDatos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="CargadeDatos" />
+       <module name="harTADs" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="MyHashImplTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+-      <module name="grupo13-p2-tads" />
+-      <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
+-      <option name="METHOD_NAME" value="get" />
+-      <option name="TEST_OBJECT" value="method" />
++    <configuration name="DataLoad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="DataLoad" />
++      <module name="harTADs" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="MyHashImplTest.put" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+-      <module name="grupo13-p2-tads" />
+-      <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
+-      <option name="METHOD_NAME" value="put" />
+-      <option name="TEST_OBJECT" value="method" />
++    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Menu" />
++      <module name="harTADs" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="MyHashImplTest.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="MyHeapImplTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="grupo13-p2-tads" />
+       <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
+-      <option name="METHOD_NAME" value="remove" />
++      <option name="MAIN_CLASS_NAME" value="MyHeapImplTest" />
++      <option name="METHOD_NAME" value="testInsert" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -152,11 +170,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.DataLoad" />
++        <item itemvalue="Application.ArrayList" />
++        <item itemvalue="JUnit.MyHeapImplTest.testInsert" />
+         <item itemvalue="Application.Menu" />
+         <item itemvalue="Application.CargadeDatos" />
+-        <item itemvalue="JUnit.MyHashImplTest.get" />
+-        <item itemvalue="JUnit.MyHashImplTest.remove" />
+-        <item itemvalue="JUnit.MyHashImplTest.put" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -202,7 +220,19 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/master" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+@@ -220,6 +250,11 @@
+           <properties class="java.lang.NumberFormatException" package="java.lang" />
+           <option name="timeStamp" value="1" />
+         </breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java</url>
++          <line>8</line>
++          <option name="timeStamp" value="2" />
++        </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>
+   </component>
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/Node.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/Node.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/Node.java
+new file mode 100644
+--- /dev/null	(date 1655989237373)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/Node.java	(date 1655989237373)
+@@ -0,0 +1,17 @@
++package uy.edu.um.prog2.adt.tads.MyArrayList;
++
++public class Node<T> {
++    private T value;
++
++    public Node(T value) {
++        this.value = value;
++    }
++
++    public T getValue() {
++        return value;
++    }
++
++    public void setValue(T value) {
++        this.value = value;
++    }
++}
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/ArrayList.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/ArrayList.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/ArrayList.java
+new file mode 100644
+--- /dev/null	(date 1656013405703)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/ArrayList.java	(date 1656013405703)
+@@ -0,0 +1,100 @@
++package uy.edu.um.prog2.adt.tads.MyArrayList;
++
++import java.util.Arrays;
++
++public class ArrayList<T> implements MyArrayList<T> {
++
++    private static int GROWTH_FACTOR = 2;
++    private static int INITIAL_CAPACITY = 20;
++    private int size = 0;
++    @SuppressWarnings("Unchecked")
++    private T[] array = (T[]) new Object[INITIAL_CAPACITY];
++
++
++    @Override
++    public void add(T value) {
++        ensureCapacity();
++        array[size++] = value;
++    }
++    private void ensureCapacity(){
++        if (size < array.length){
++            return;
++        }
++        resize();
++    }
++
++    private void resize(){
++        Arrays.copyOf(array,array.length * 2);
++    }
++
++   /* private void copy(T[] original,T[] copy) {
++        for (int i = 0; i < original.length; i++) {
++            copy[i] = original[i];
++        }
++    }*/
++
++    @Override
++    public int size() {
++        return size;
++    }
++
++    @Override
++    public T get(int position) throws IndexOutOfBoundsException {
++        if (position > size) { throw new IndexOutOfBoundsException();}
++        T exit = array[position];
++        return exit;
++    }
++
++    @Override
++    public void set(int position, T value) throws IndexOutOfBoundsException {
++        if (position > size){throw new IndexOutOfBoundsException();}
++        array[position] = value;
++    }
++
++    @Override
++    public void remove(int position) throws IndexOutOfBoundsException {
++        if(position > size || position < 0){throw new IndexOutOfBoundsException();}
++        if(position == size-1){
++            set(size-1,null);
++            size--;
++        }else {
++            for (int i = position; i < size-1; i++) {
++                array[i] = array[i+1];
++            }
++            set(size-1,null);
++            size--;
++        }
++    }
++
++    @Override
++    public void remove(T value) {
++
++    }
++
++    @Override
++    public boolean contains(T value) {
++        return false;
++    }
++
++    @Override
++    public int getIndex(T value) {
++        return 0;
++    }
++
++    public static void main(String[] args) {
++        MyArrayList<Integer> prueba = new ArrayList<>();
++        prueba.add(1);
++        prueba.add(2);
++        prueba.add(3);
++        prueba.add(4);
++
++        for (int i = 0; i < prueba.size(); i++) {
++            System.out.println(prueba.get(i));
++        }
++        System.out.println();
++        prueba.remove(1);
++        for (int i = 0; i < prueba.size(); i++) {
++            System.out.println(prueba.get(i));
++        }
++    }
++}
+\ No newline at end of file
