@@ -3,7 +3,7 @@ package uy.edu.um.prog2.adt.tads.MyHash;
 public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
 
     private NodeHashTable<Key, Value>[] elements = new NodeHashTable[INITIAL_SIZE];
-    private final static int INITIAL_SIZE = 10;
+    private final static int INITIAL_SIZE = 20;
     public int load;
     private final static float LOAD_FACTOR = 0.8f;
 

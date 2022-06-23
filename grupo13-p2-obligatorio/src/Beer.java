@@ -4,19 +4,21 @@ import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
 import uy.edu.um.prog2.adt.tads.MyQueue.MyQueue;
 import uy.edu.um.prog2.adt.tads.MyQueue.MyQueueImpl;
 
+import java.util.ArrayList;
+
 public class Beer {
 
     private String name;
     private long id;
     private double abv;
     private Style style;
-    private MyHashImpl<Integer,Review> reviews= new MyHashImpl();
+
+    private MyHashImpl<Integer,Review> reviews = new MyHashImpl<>();
 
     public Beer(String name, long id, double abv) {
         this.name = name;
         this.id = id;
         this.abv = abv;
-        this.style = style;
     }
 
     public Style getStyle() {

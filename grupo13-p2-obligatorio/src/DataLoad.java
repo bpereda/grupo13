@@ -4,12 +4,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Hashtable;
 
 @SuppressWarnings("ALL")
 public class DataLoad{
     static MyHashImpl<Long, Beer> beers = new MyHashImpl<>();
     static MyHashImpl<Long, Brewery> breweries = new MyHashImpl<>();
+
+    static MyHashImpl<Long, Review> reviews = new MyHashImpl<>();
 
     public DataLoad() {
     }
@@ -18,11 +22,12 @@ public class DataLoad{
 
         try {
             long tiempo_final;
-            FileReader fileReader = new FileReader("grupo13-p2-obligatorio/beer_dataset_test.csv");
+            FileReader fileReader = new FileReader("C:\\Users\\javip\\Downloads\\2022_obligatorio_dataset\\beer_dataset_full.csv");
             BufferedReader br = new BufferedReader(fileReader);
             String[] vectorStrings;
             String line;
             long tiempo_inicial = System.currentTimeMillis();
+
 
             //Chequeos chequeo = new Chequeos();
             br.readLine();
@@ -65,6 +70,7 @@ public class DataLoad{
                     newBeer.setStyle(newStyle);
                     Brewery newBrewery = new Brewery(brewery_id, brewery_name);
                     Review newReview = new Review(review_id, review_date, review_overall, review_aroma, review_appearance, review_taste, newUser, brewery_id);
+                    reviews.put(beer_id,newReview);
                     newBeer.addReview(newReview);
 
                     if (breweries.get(brewery_id) == null) {
@@ -107,5 +113,8 @@ public class DataLoad{
     public static void main(String[] args) {
         DataLoad prueba = new DataLoad();
         Carga();
+    }
+
+    private class Static {
     }
 }
