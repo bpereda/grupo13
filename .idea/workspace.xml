@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="arreglo bst">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/opencsv_5_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/harTADs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/harTADs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/grupo13-p2-tads.iml" afterDir="false" />
-    </list>
+    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="arreglo bst" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655750203644</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="funciona data load">
+      <created>1656014793770</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656014793770</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +206,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ultima version" />
     <MESSAGE value="Arregle Hash e hice Tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Arregle Hash e hice Tests." />
+    <MESSAGE value="funciona data load" />
+    <option name="LAST_COMMIT_MESSAGE" value="funciona data load" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
