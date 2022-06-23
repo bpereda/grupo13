@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="mejora data load">
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java" afterDir="false" />
+    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="no funciona push">
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/beer_dataset_full.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +35,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2ARum8SL7xcaY41hTeHP9l1nUcU" />
   <component name="ProjectViewState">
@@ -67,6 +67,9 @@
       <recent name="C:\Users\agust\IdeaProjects\grupo13\grupo13-p2-tads\src\uy\edu\um\prog2\adt\tads" />
       <recent name="C:\Users\belen\OneDrive\Escritorio\harTADs\grupo13-p2-tads" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\belen\OneDrive\Escritorio\grupo13\grupo13-p2-obligatorio" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -75,9 +78,16 @@
       <recent name="uy.edu.um.prog2.adt.tads.MyQueue" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Menu">
+  <component name="RunManager" selected="Application.DataLoad">
     <configuration name="CargadeDatos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CargadeDatos" />
+      <module name="harTADs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataLoad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DataLoad" />
       <module name="harTADs" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -95,16 +105,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
       <option name="METHOD_NAME" value="get" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyHashImplTest.put" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="grupo13-p2-tads" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
-      <option name="METHOD_NAME" value="put" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DataLoad" />
         <item itemvalue="Application.Menu" />
         <item itemvalue="Application.CargadeDatos" />
         <item itemvalue="JUnit.MyHashImplTest.get" />
         <item itemvalue="JUnit.MyHashImplTest.remove" />
-        <item itemvalue="JUnit.MyHashImplTest.put" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +195,49 @@
       <option name="project" value="LOCAL" />
       <updated>1656015062223</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mejora data load">
+      <created>1656015326820</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656015326821</updated>
+    </task>
+    <task id="LOCAL-00006" summary="mejora en tiempo">
+      <created>1656020675036</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656020675036</updated>
+    </task>
+    <task id="LOCAL-00007" summary="mejora en tiempo">
+      <created>1656020949768</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656020949768</updated>
+    </task>
+    <task id="LOCAL-00008" summary="no funciona push">
+      <created>1656021679560</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656021679560</updated>
+    </task>
+    <task id="LOCAL-00009" summary="no funciona push">
+      <created>1656022180224</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656022180224</updated>
+    </task>
+    <task id="LOCAL-00010" summary="no funciona push">
+      <created>1656022401250</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656022401250</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +248,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -217,7 +271,9 @@
     <MESSAGE value="Arregle Hash e hice Tests." />
     <MESSAGE value="funciona data load" />
     <MESSAGE value="mejora data load" />
-    <option name="LAST_COMMIT_MESSAGE" value="mejora data load" />
+    <MESSAGE value="mejora en tiempo" />
+    <MESSAGE value="no funciona push" />
+    <option name="LAST_COMMIT_MESSAGE" value="no funciona push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

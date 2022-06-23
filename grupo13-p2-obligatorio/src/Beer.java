@@ -1,5 +1,4 @@
-import uy.edu.um.prog2.adt.tads.MyArrayList.ArrayList;
-import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
+
 import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
 import uy.edu.um.prog2.adt.tads.MyQueue.MyQueue;
