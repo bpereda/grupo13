@@ -1,32 +1,24 @@
+import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
+
+import java.util.Date;
 
 public class Brewery {
 
     private long id;
     private String name;
-    private MyHashImpl<Long, Beer> Beers = new MyHashImpl<>();
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public MyHashImpl<Long, Beer> getBeers() {
-        return Beers;
-    }
-
-    public void setBeers(MyHashImpl<Long, Beer> beers) {
-        Beers = beers;
-    }
-
-    public Brewery(int id, String name) {
+    private MyHash<Long,Beer> beers = new MyHashImpl<>();
+    public Brewery(long id, String name) {
         this.id = id;
         this.name = name;
     }
+
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -37,4 +29,10 @@ public class Brewery {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void addBeer(Beer beer){
+        beers.put(beer.getId(), beer);
+    }
+
+
 }

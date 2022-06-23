@@ -3,39 +3,33 @@ import java.util.Date;
 public class Review {
 
     private long id;
-    private Date Date;
+    private Date date;
     private double overallScore;
     private double aromaScore;
     private double appearanceScore;
     private double flavourScore;
     private User user;
-    private Brewery brewery;
+    private long idBrewery;
 
     public java.util.Date getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(java.util.Date date) {
-        Date = date;
+        this.date = date;
     }
 
-    public Brewery getBrewery() {
-        return brewery;
-    }
 
-    public void setBrewery(Brewery brewery) {
-        this.brewery = brewery;
-    }
 
-    public Review(long id, java.util.Date date, double overallScore, double aromaScore, double appearanceScore, double flavourScore, User user, Brewery brewery) {
+    public Review(long id, java.util.Date date, double overallScore, double aromaScore, double appearanceScore, double flavourScore, User user, long brewery) {
         this.id = id;
-        Date = date;
+        this.date = date;
         this.overallScore = overallScore;
         this.aromaScore = aromaScore;
         this.appearanceScore = appearanceScore;
         this.flavourScore = flavourScore;
         this.user = user;
-        this.brewery = brewery;
+        this.idBrewery = brewery;
     }
 
     public long getId() {
@@ -86,5 +80,8 @@ public class Review {
         this.user = user;
     }
 
-
+    @Deprecated
+    public int getYear(){
+        return date.getYear();
+    }
 }

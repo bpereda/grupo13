@@ -1,4 +1,9 @@
+import uy.edu.um.prog2.adt.tads.MyArrayList.ArrayList;
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
+import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
+import uy.edu.um.prog2.adt.tads.MyQueue.MyQueue;
+import uy.edu.um.prog2.adt.tads.MyQueue.MyQueueImpl;
 
 public class Beer {
 
@@ -6,7 +11,7 @@ public class Beer {
     private long id;
     private double abv;
     private Style style;
-    private MyHashImpl<Long,Review> reviews = new MyHashImpl<>();
+    private MyHashImpl<Integer,Review> reviews= new MyHashImpl();
 
     public Beer(String name, long id, double abv) {
         this.name = name;
@@ -21,14 +26,6 @@ public class Beer {
 
     public void setStyle(Style style) {
         this.style = style;
-    }
-
-    public MyHashImpl<Long, Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(MyHashImpl<Long, Review> reviews) {
-        this.reviews = reviews;
     }
 
     public String getName() {
@@ -53,5 +50,8 @@ public class Beer {
 
     public void setAbv(double abv) {
         this.abv = abv;
+    }
+    public void addReview(Review review) {
+        reviews.put(review.getYear(),review);
     }
 }
