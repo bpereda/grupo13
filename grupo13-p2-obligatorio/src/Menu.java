@@ -10,7 +10,7 @@ public class Menu
 {
     public static void Menu()
     {
-        DataLoad prueba = new DataLoad();
+        //DataLoad prueba = new DataLoad();
         //CargaDeDatos CargaDatos = new CargaDeDatos();
         int opcion = 0;
 
@@ -25,8 +25,8 @@ public class Menu
 
             if (opcion == 1)
             {
-                DataLoad.Carga();
-                System.out.println("Carga de datos finalizada.");
+                //DataLoad.Carga();
+                //System.out.println("Carga de datos finalizada.");
             }
 
             if (opcion == 2)

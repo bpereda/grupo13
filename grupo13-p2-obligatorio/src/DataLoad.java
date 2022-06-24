@@ -12,7 +12,6 @@ import java.util.Hashtable;
 public class DataLoad{
     static MyHashImpl<Long, Beer> beers = new MyHashImpl<>();
     static MyHashImpl<Long, Brewery> breweries = new MyHashImpl<>();
-
     static MyHashImpl<Long, Review> reviews = new MyHashImpl<>();
 
     public DataLoad() {
@@ -34,13 +33,12 @@ public class DataLoad{
 
         try {
             long tiempo_final;
-            FileReader fileReader = new FileReader("C:\\Users\\javip\\Downloads\\2022_obligatorio_dataset\\beer_dataset_full.csv");
+            //FileReader fileReader = new FileReader("C:\\Users\\javip\\Downloads\\2022_obligatorio_dataset\\beer_dataset_full.csv");
+            FileReader fileReader = new FileReader("C:\\Users\\agust\\Downloads\\2022_obligatorio_dataset\\beer_dataset_test.csv");
             BufferedReader br = new BufferedReader(fileReader);
             String[] vectorStrings;
             String line;
             long tiempo_inicial = System.currentTimeMillis();
-
-
             //Chequeos chequeo = new Chequeos();
             br.readLine();
             while ((line = br.readLine()) != null) {
@@ -82,8 +80,9 @@ public class DataLoad{
                     newBeer.setStyle(newStyle);
                     Brewery newBrewery = new Brewery(brewery_id, brewery_name);
                     Review newReview = new Review(review_id, review_date, review_overall, review_aroma, review_appearance, review_taste, newUser, brewery_id);
-                    reviews.put(beer_id,newReview);
+                    reviews.put(review_id,newReview);
                     newBeer.addReview(newReview);
+
 
                     if (breweries.get(brewery_id) == null) {
                         newBrewery.addBeer(newBeer);
@@ -123,10 +122,9 @@ public class DataLoad{
     }
 
     public static void main(String[] args) {
-        DataLoad prueba = new DataLoad();
-        Carga();
+        //DataLoad prueba = new DataLoad();
+        //Carga();
     }
-
     private class Static {
     }
 }

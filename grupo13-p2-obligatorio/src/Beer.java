@@ -12,6 +12,7 @@ public class Beer {
     private long id;
     private double abv;
     private Style style;
+    private long aromaScore;
 
     private MyHashImpl<Integer,Review> reviews = new MyHashImpl<>();
 

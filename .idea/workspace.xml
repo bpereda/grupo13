@@ -4,9 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="mejoro heap">
+    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="carga de datos">
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Ordenamiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_5_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_5_08_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyHeapImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyHeapImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/HeapNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeapImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Beer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Beer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/harTADs/DataLoad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/DataLoad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/harTADs/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/grupo13-p2-tads/MyHeapImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/grupo13-p2-tads/MyHeapImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +44,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -37,7 +58,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2ARum8SL7xcaY41hTeHP9l1nUcU" />
   <component name="ProjectViewState">
@@ -53,7 +74,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/opencsv-5.6.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/copiadelgit" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -69,9 +90,6 @@
       <recent name="C:\Users\agust\IdeaProjects\grupo13\grupo13-p2-tads\src\uy\edu\um\prog2\adt\tads" />
       <recent name="C:\Users\belen\OneDrive\Escritorio\harTADs\grupo13-p2-tads" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\belen\OneDrive\Escritorio\grupo13\grupo13-p2-obligatorio" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -80,7 +98,7 @@
       <recent name="uy.edu.um.prog2.adt.tads.MyQueue" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DataLoad">
+  <component name="RunManager" selected="Application.Menu">
     <configuration name="CargadeDatos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CargadeDatos" />
       <module name="harTADs" />
@@ -144,8 +162,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DataLoad" />
         <item itemvalue="Application.Menu" />
+        <item itemvalue="Application.DataLoad" />
         <item itemvalue="Application.CargadeDatos" />
         <item itemvalue="JUnit.MyHashImplTest.get" />
         <item itemvalue="JUnit.MyHashImplTest.remove" />
@@ -168,6 +186,8 @@
       <workItem from="1655749675680" duration="9410000" />
       <workItem from="1655918292363" duration="14392000" />
       <workItem from="1655940655617" duration="5620000" />
+      <workItem from="1656038823969" duration="867000" />
+      <workItem from="1656039997002" duration="13969000" />
     </task>
     <task id="LOCAL-00001" summary="ultima version">
       <created>1655258786118</created>
@@ -197,56 +217,7 @@
       <option name="project" value="LOCAL" />
       <updated>1656015062223</updated>
     </task>
-    <task id="LOCAL-00005" summary="mejora data load">
-      <created>1656015326820</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1656015326821</updated>
-    </task>
-    <task id="LOCAL-00006" summary="mejora en tiempo">
-      <created>1656020675036</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1656020675036</updated>
-    </task>
-    <task id="LOCAL-00007" summary="mejora en tiempo">
-      <created>1656020949768</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1656020949768</updated>
-    </task>
-    <task id="LOCAL-00008" summary="no funciona push">
-      <created>1656021679560</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1656021679560</updated>
-    </task>
-    <task id="LOCAL-00009" summary="no funciona push">
-      <created>1656022180224</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1656022180224</updated>
-    </task>
-    <task id="LOCAL-00010" summary="no funciona push">
-      <created>1656022401250</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1656022401250</updated>
-    </task>
-    <task id="LOCAL-00011" summary="mejoro heap">
-      <created>1656031688085</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1656031688085</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,19 +228,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -280,10 +239,7 @@
     <MESSAGE value="Arregle Hash e hice Tests." />
     <MESSAGE value="funciona data load" />
     <MESSAGE value="mejora data load" />
-    <MESSAGE value="mejora en tiempo" />
-    <MESSAGE value="no funciona push" />
-    <MESSAGE value="mejoro heap" />
-    <option name="LAST_COMMIT_MESSAGE" value="mejoro heap" />
+    <option name="LAST_COMMIT_MESSAGE" value="mejora data load" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,6 +248,15 @@
           <properties class="java.lang.NumberFormatException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
