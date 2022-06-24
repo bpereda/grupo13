@@ -34,7 +34,7 @@ public class DataLoad{
 
         try {
             long tiempo_final;
-            FileReader fileReader = new FileReader("C:\\Users\\javip\\Downloads\\2022_obligatorio_dataset\\beer_dataset_full.csv");
+            FileReader fileReader = new FileReader("C:\\Users\\belen\\OneDrive - Universidad de Montevideo\\Facultad\\Tercer Semestre\\Programación II\\Obligatorio2022\\2022_obligatorio_dataset\\beer_dataset_full.csv");
             BufferedReader br = new BufferedReader(fileReader);
             String[] vectorStrings;
             String line;
@@ -114,7 +114,7 @@ public class DataLoad{
 
 
             tiempo_final = System.currentTimeMillis();
-            System.out.println("Tiempo " + (tiempo_final - tiempo_inicial));
+            System.out.println("Tiempo de carga: " + (tiempo_final - tiempo_inicial));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -124,7 +124,7 @@ public class DataLoad{
 
     public static void main(String[] args) {
         DataLoad prueba = new DataLoad();
-        Carga();
+        prueba.Carga();
     }
 
     private class Static {

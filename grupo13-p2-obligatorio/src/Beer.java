@@ -1,4 +1,6 @@
 
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayListImpl;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
 import uy.edu.um.prog2.adt.tads.MyQueue.MyQueue;
@@ -13,7 +15,7 @@ public class Beer {
     private double abv;
     private Style style;
 
-    private MyHashImpl<Integer,Review> reviews = new MyHashImpl<>();
+    private MyArrayList<Review> reviews = new MyArrayListImpl<>();
 
     public Beer(String name, long id, double abv) {
         this.name = name;
@@ -52,7 +54,23 @@ public class Beer {
     public void setAbv(double abv) {
         this.abv = abv;
     }
+
     public void addReview(Review review) {
-        reviews.put(review.getYear(),review);
+        reviews.insert(review);
+    }
+
+    public MyArrayList<Review> getReviews() {
+        return reviews;
+    }
+
+    public int getNumberReviews(){
+        return reviews.size();
+    }
+    public double avgGeneralScore(){
+        double result = 0;
+        for (int i = 0; i < reviews.size(); i++) {
+            result += reviews.get(i).getOverallScore();
+        }
+        return result/getNumberReviews();
     }
 }

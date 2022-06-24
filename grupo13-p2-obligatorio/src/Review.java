@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Review {
@@ -80,8 +81,9 @@ public class Review {
         this.user = user;
     }
 
-    @Deprecated
-    public int getYear(){
-        return date.getYear();
+    public String getYear(){
+        SimpleDateFormat getYearFormat = new SimpleDateFormat("yyyy");
+        String year = getYearFormat.format(date);
+        return year;
     }
 }

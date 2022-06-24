@@ -9,6 +9,8 @@ public class Brewery {
     private String name;
 
     private MyHash<Long,Beer> beers = new MyHashImpl<>();
+    private int reviewsPerYear = 0;
+
     public Brewery(long id, String name) {
         this.id = id;
         this.name = name;
@@ -34,5 +36,19 @@ public class Brewery {
         beers.put(beer.getId(), beer);
     }
 
+    public MyHash<Long, Beer> getBeers() {
+        return beers;
+    }
 
+    public void setBeers(MyHash<Long, Beer> beers) {
+        this.beers = beers;
+    }
+
+    public int getReviewsPerYear() {
+        return reviewsPerYear;
+    }
+
+    public void setReviewsPerYear() {
+        this.reviewsPerYear++;
+    }
 }
