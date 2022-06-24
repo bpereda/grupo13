@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_23_6_2022_17_36_[Changes]" date="1656016681036" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_6_2022_17_36_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 23/6/2022 17:36 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/harTADs/CargaDeDatos.class" />
+    <option name="AFTER_PATH" value="out/production/harTADs/CargaDeDatos.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_6_2022_17_36_[Changes]/CargaDeDatos.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/harTADs/Menu.class" />
+    <option name="AFTER_PATH" value="out/production/harTADs/Menu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_6_2022_17_36_[Changes]/Menu.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/harTADs/User.class" />
+    <option name="AFTER_PATH" value="out/production/harTADs/User.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_6_2022_17_36_[Changes]/User.class" />
+  </binary>
+</changelist>

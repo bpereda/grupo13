@@ -1,0 +1,57 @@
+Index: grupo13-p2-obligatorio/src/Consultas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Consultas {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/Consultas.java b/grupo13-p2-obligatorio/src/Consultas.java
+--- a/grupo13-p2-obligatorio/src/Consultas.java	(revision 98a11a810654e6b9ee440243adcdf7d09de7be22)
++++ b/grupo13-p2-obligatorio/src/Consultas.java	(date 1656054340274)
+@@ -1,3 +1,46 @@
++import uy.edu.um.prog2.adt.tads.MyBST.MyHeap.MyHeapImpl;
++import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
++import uy.edu.um.prog2.adt.tads.MyHash.NodeHashTable;
++
+ public class Consultas {
+ 
++    public Consultas() {
++        DataLoad.Carga();
++    }
++
++
++    public void Consulta4()
++    {
++
++        NodeHashTable[] beers = DataLoad.getBeers().getElements();
++        MyHeapImpl<Long, Beer> Top7 = new MyHeapImpl<>(true);
++
++        for(int i = 0; i < beers.length; i++)
++        {
++            if(beers[i]!=null)
++            {
++
++            }
++        }
++
++
++
++
++
++    }
++
++
++
++
++
++
++
++
++
++    public static void main(String[] args) {
++        Consultas prueba = new Consultas();
++        //prueba.Consulta1("1970");
++        //prueba.Consulta5();
++    }
++
+ }

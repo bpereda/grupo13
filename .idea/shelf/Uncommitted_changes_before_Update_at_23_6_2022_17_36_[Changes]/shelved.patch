@@ -1,0 +1,392 @@
+Index: grupo13-p2-obligatorio/src/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class User {\r\n    private String username;\r\n    public User(String username) {\r\n        this.username = username;\r\n    }\r\n\r\n    public String getUsername() {\r\n        return username;\r\n    }\r\n\r\n    public void setUsername(String username) {\r\n        this.username = username;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/User.java b/grupo13-p2-obligatorio/src/User.java
+--- a/grupo13-p2-obligatorio/src/User.java	(revision 50b5c750eb554a923287dbf0893a416f4fab8f99)
++++ b/grupo13-p2-obligatorio/src/User.java	(date 1655999562340)
+@@ -1,5 +1,15 @@
+-public class User {
++public class User implements Comparable<User>{
+     private String username;
++    int cantidad_de_resenias = 0;
++
++    public int getCantidad_de_resenias() {
++        return cantidad_de_resenias;
++    }
++
++    public void setCantidad_de_resenias(int cantidad_de_resenias) {
++        this.cantidad_de_resenias = cantidad_de_resenias;
++    }
++
+     public User(String username) {
+         this.username = username;
+     }
+@@ -11,4 +21,18 @@
+     public void setUsername(String username) {
+         this.username = username;
+     }
++
++    @Override
++    public int compareTo(User o) {
++        if(this.getCantidad_de_resenias()>o.getCantidad_de_resenias())
++        {
++            return 1;
++        }else if(this.getCantidad_de_resenias()==o.getCantidad_de_resenias())
++        {
++            return 0;
++        }else
++        {
++            return -1;
++        }
++    }
+ }
+Index: grupo13-p2-obligatorio/src/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import com.opencsv.exceptions.CsvValidationException;\r\n\r\nimport java.io.IOException;\r\nimport java.util.Scanner;\r\n\r\npublic class Menu\r\n    {\r\n    public static void Menu()\r\n    {\r\n        CargaDeDatos CargaDatos = new CargaDeDatos();\r\n        Scanner sc = new Scanner(System.in);\r\n        System.out.println(\"Seleccione una opcion: \");\r\n        System.out.println(\"1. carga de datos.\");\r\n        System.out.println(\"2. Realizar consultas.\");\r\n        System.out.println(\"3. Finaliar programa.\");\r\n        int opcion = sc.nextInt();\r\n        while (opcion!=3)\r\n        {\r\n            if (opcion==1)\r\n            {\r\n                try {\r\n                    CargaDeDatos.Carga();\r\n                } catch (IOException e) {\r\n                } catch (CsvValidationException e) {\r\n                }\r\n\r\n            }else if(opcion==2)\r\n            {\r\n                System.out.println(\"1. Las 10 casas de cerveza con mas resenias en un anio.\");\r\n                System.out.println(\"2. Top 15 catadores con mas reseñas.\");\r\n                System.out.println(\"3. Cantidad de resenias en un rango dado.\");\r\n                System.out.println(\"4. Top 7 cervezas con mejor aroma.\");\r\n                System.out.println(\"5. Top 5 cervezas con mas reviews.\");\r\n                Scanner opcion2 = new Scanner(System.in);\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    public static void main(String[] args)\r\n    {\r\n        Menu menu = new Menu();\r\n        menu.Menu();\r\n    }\r\n\r\n    }
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/Menu.java b/grupo13-p2-obligatorio/src/Menu.java
+--- a/grupo13-p2-obligatorio/src/Menu.java	(revision 50b5c750eb554a923287dbf0893a416f4fab8f99)
++++ b/grupo13-p2-obligatorio/src/Menu.java	(date 1656016592059)
+@@ -1,4 +1,5 @@
+ import com.opencsv.exceptions.CsvValidationException;
++import uy.edu.um.prog2.adt.tads.MyQueue.EmptyQueueException;
+ 
+ import java.io.IOException;
+ import java.util.Scanner;
+@@ -7,31 +8,92 @@
+     {
+     public static void Menu()
+     {
+-        CargaDeDatos CargaDatos = new CargaDeDatos();
+-        Scanner sc = new Scanner(System.in);
+-        System.out.println("Seleccione una opcion: ");
+-        System.out.println("1. carga de datos.");
+-        System.out.println("2. Realizar consultas.");
+-        System.out.println("3. Finaliar programa.");
+-        int opcion = sc.nextInt();
+-        while (opcion!=3)
+-        {
++        int opcion = 0;
++        while (opcion!=3)
++        {
++            CargaDeDatos CargaDatos = new CargaDeDatos();
++            Scanner sc = new Scanner(System.in);
++            System.out.println("Seleccione una opcion: ");
++            System.out.println("1. carga de datos.");
++            System.out.println("2. Realizar consultas.");
++            System.out.println("3. Finaliar programa.");
++            opcion = sc.nextInt();
++
+             if (opcion==1)
+             {
+                 try {
+                     CargaDeDatos.Carga();
++                    System.out.println("Carga de datos realizada.");
+                 } catch (IOException e) {
+                 } catch (CsvValidationException e) {
+                 }
+ 
+             }else if(opcion==2)
+             {
++                Scanner sc1 = new Scanner(System.in);
+                 System.out.println("1. Las 10 casas de cerveza con mas resenias en un anio.");
+-                System.out.println("2. Top 15 catadores con mas reseñas.");
++                System.out.println("2. Top 15 catadores con mas resenias.");
+                 System.out.println("3. Cantidad de resenias en un rango dado.");
+                 System.out.println("4. Top 7 cervezas con mejor aroma.");
+                 System.out.println("5. Top 5 cervezas con mas reviews.");
+-                Scanner opcion2 = new Scanner(System.in);
++                int opcion2 = sc.nextInt();
++
++                if (opcion2==1)
++                {
++
++                }
++                if(opcion2==2)
++                {
++                    User[] users = new User[CargaDeDatos.ReviewQueue.size];
++                    int i = 0;
++                    int j = 0;
++                    while(i<CargaDeDatos.ReviewQueue.size)
++                    {
++                        try {
++                            Review rev_temp = CargaDeDatos.ReviewQueue.dequeue();
++                            User user_temp = rev_temp.getUser();
++                            User user_buscado = null;
++                            for(int x=0; i< users.length; i++)
++                            {
++                                if(users[x].getUsername()==user_temp.getUsername())
++                                {
++                                    user_buscado = user_temp;
++                                }
++                            }
++                            if(user_buscado.getCantidad_de_resenias()==0)
++                            {
++                                users[j] = user_temp;
++                                j++;
++                            }
++                            int incremento = user_buscado.getCantidad_de_resenias()+1;
++                            user_buscado.setCantidad_de_resenias(incremento);
++                            CargaDeDatos.ReviewQueue.enqueue(rev_temp);
++                        } catch (EmptyQueueException e) {}
++                    }
++                    User[] catadores_mas_resenias = new User[15];
++                    for(int x=0; x<15; x++)
++                    {
++                        catadores_mas_resenias[x] = users[x];
++                    }
++                    //Sorting y comparar con el resto de las posiciones.
++
++                if (opcion2==3)
++                {
++
++                }
++
++                if (opcion2==4)
++                {
++
++                }
++
++                if(opcion2==5)
++                {
++
++                }
++
++                }
++
+             }
+         }
+ 
+Index: grupo13-p2-obligatorio/src/CargaDeDatos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import com.opencsv.CSVReader;\r\nimport com.opencsv.exceptions.CsvValidationException;\r\nimport uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;\r\nimport java.io.FileReader;\r\nimport java.io.IOException;\r\nimport java.util.Date;\r\n\r\npublic class CargaDeDatos {\r\n    static MyHashImpl<Integer, Beer> BeerHash = new MyHashImpl();\r\n    static MyHashImpl<Long, Brewery> BreweryHash = new MyHashImpl<Long, Brewery>();\r\n    static MyHashImpl<Long, Review> ReviewHash = new MyHashImpl<Long, Review>();\r\n    MyHashImpl<Long, Style> StyleHash = new MyHashImpl<Long, Style>();\r\n\r\n    public static void Carga() throws IOException, CsvValidationException {\r\n\r\n        try {\r\n\r\n            FileReader fileReader = new FileReader(\"C:\\\\Users\\\\agust\\\\Downloads\\\\2022_obligatorio_dataset\\\\beer_dataset_test.csv\");\r\n            CSVReader csvReader = new CSVReader(fileReader);\r\n            //BufferedReader br = new BufferedReader(fileReader);\r\n            csvReader.readNext();\r\n            String[] vectorStrings;\r\n            //String[] linea;\r\n            long tiempo_inicial = System.currentTimeMillis();\r\n            long tiempo_final;\r\n            Chequeos chequeo = new Chequeos();\r\n\r\n            while ((vectorStrings = csvReader.readNext()) != null) {\r\n\r\n                //System.out.println(vectorStrings[12]);\r\n                //vectorStrings = csvReader.readNext();\r\n                //String[] vectorStrings = linea.split(\",\");\r\n\r\n                if (chequeo.chequeoDatos(vectorStrings)) {\r\n                    String id_review_str = vectorStrings[0];\r\n                    Long id_review = Long.parseLong(id_review_str);\r\n                    String brewery_id_str = vectorStrings[1];\r\n                    Long brewery_id = Long.parseLong(brewery_id_str);\r\n                    String brewery_name = vectorStrings[2];\r\n                    String review_time_str = vectorStrings[3];\r\n                    Date review_date = new Date(review_time_str);\r\n                    String review_overall_str = vectorStrings[4];\r\n                    Double review_overall = Double.parseDouble(review_overall_str);\r\n                    String review_aroma_str = vectorStrings[5];\r\n                    Double review_aroma = Double.parseDouble(review_aroma_str);\r\n                    String review_appearance_str = vectorStrings[6];\r\n                    Double review_appearance = Double.parseDouble(review_appearance_str);\r\n                    String review_profilename = vectorStrings[7];\r\n                    String beer_style = vectorStrings[8];\r\n                    String review_palate_str = vectorStrings[9];\r\n                    Double review_palate = Double.parseDouble(review_palate_str);\r\n                    String review_taste_str = vectorStrings[10];\r\n                    Double review_taste = Double.parseDouble(review_taste_str);\r\n                    String beer_name = vectorStrings[11];\r\n                    String beer_abv_str = vectorStrings[12];\r\n                    Double beer_abv = Double.parseDouble(beer_abv_str);\r\n                    String beer_id_str = vectorStrings[13];\r\n                    Long beer_id = Long.parseLong(beer_id_str);\r\n                    User user = new User(review_profilename);\r\n                    Style style = new Style(beer_style);\r\n\r\n                    Brewery brewery = new Brewery(Math.toIntExact(brewery_id), brewery_name);\r\n                    BreweryHash.put(brewery_id, brewery);\r\n\r\n                    Review review = new Review(id_review, review_date, review_overall, review_aroma, review_appearance, review_taste, user, brewery);\r\n                    Beer beer = new Beer(beer_name, beer_id, beer_abv);\r\n                    if (BeerHash.get(Math.toIntExact(beer_id))==null){\r\n                        BeerHash.put(Math.toIntExact(beer_id), beer);\r\n                    }else{\r\n                        BeerHash.get(Math.toIntExact(beer_id)).getReviews().put(id_review, review);\r\n                    }\r\n\r\n                    if(BreweryHash.get(brewery_id).getBeers().get(beer_id)==null)\r\n                    {\r\n                            BreweryHash.get(brewery_id).getBeers().put(beer_id, beer);\r\n                    }\r\n\r\n                    tiempo_final = System.currentTimeMillis();\r\n                    //System.out.println(\"Tiempo \"+ (tiempo_final-tiempo_inicial));\r\n\r\n                }\r\n            }\r\n                        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/CargaDeDatos.java b/grupo13-p2-obligatorio/src/CargaDeDatos.java
+--- a/grupo13-p2-obligatorio/src/CargaDeDatos.java	(revision 50b5c750eb554a923287dbf0893a416f4fab8f99)
++++ b/grupo13-p2-obligatorio/src/CargaDeDatos.java	(date 1656014775966)
+@@ -1,15 +1,18 @@
+ import com.opencsv.CSVReader;
+ import com.opencsv.exceptions.CsvValidationException;
+ import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
++import uy.edu.um.prog2.adt.tads.MyQueue.MyQueueImpl;
++
+ import java.io.FileReader;
+ import java.io.IOException;
+ import java.util.Date;
+ 
+ public class CargaDeDatos {
+-    static MyHashImpl<Integer, Beer> BeerHash = new MyHashImpl();
+-    static MyHashImpl<Long, Brewery> BreweryHash = new MyHashImpl<Long, Brewery>();
+-    static MyHashImpl<Long, Review> ReviewHash = new MyHashImpl<Long, Review>();
+-    MyHashImpl<Long, Style> StyleHash = new MyHashImpl<Long, Style>();
++    public static MyHashImpl<Integer, Beer> BeerHash = new MyHashImpl();
++    public static MyHashImpl<Long, Brewery> BreweryHash = new MyHashImpl<Long, Brewery>();
++    //public static MyHashImpl<Long, Review> ReviewHash = new MyHashImpl<Long, Review>();
++    public MyHashImpl<Long, User> UserHash = new MyHashImpl<>();
++    public static MyQueueImpl<Review> ReviewQueue = new MyQueueImpl<>();
+ 
+     public static void Carga() throws IOException, CsvValidationException {
+ 
+@@ -56,6 +59,7 @@
+                     Double beer_abv = Double.parseDouble(beer_abv_str);
+                     String beer_id_str = vectorStrings[13];
+                     Long beer_id = Long.parseLong(beer_id_str);
++
+                     User user = new User(review_profilename);
+                     Style style = new Style(beer_style);
+ 
+@@ -63,6 +67,8 @@
+                     BreweryHash.put(brewery_id, brewery);
+ 
+                     Review review = new Review(id_review, review_date, review_overall, review_aroma, review_appearance, review_taste, user, brewery);
++                    ReviewQueue.enqueue(review);
++
+                     Beer beer = new Beer(beer_name, beer_id, beer_abv);
+                     if (BeerHash.get(Math.toIntExact(beer_id))==null){
+                         BeerHash.put(Math.toIntExact(beer_id), beer);
+@@ -74,10 +80,8 @@
+                     {
+                             BreweryHash.get(brewery_id).getBeers().put(beer_id, beer);
+                     }
+-
+                     tiempo_final = System.currentTimeMillis();
+                     //System.out.println("Tiempo "+ (tiempo_final-tiempo_inicial));
+-
+                 }
+             }
+                         } catch (IOException e) {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"56172931-c0bc-492c-9c3c-35e5b53cee95\" name=\"Changes\" comment=\"carga de datos\">\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/harTADs/Beer.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/harTADs/Beer.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/harTADs/Brewery.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/harTADs/Brewery.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/harTADs/Review.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/harTADs/Review.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2ARum8SL7xcaY41hTeHP9l1nUcU\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"Downloaded.Files.Path.Enabled\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Annotations\" value=\"false\" />\r\n    <property name=\"Repository.Attach.JavaDocs\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Sources\" value=\"false\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$USER_HOME$/Downloads/opencsv-5.6.jar\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs.protractor.protractor_package\" value=\"\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Libraries\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"Settings.JavaScript\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\agust\\IdeaProjects\\grupo13\\grupo13-p2-tads\\src\\uy\\edu\\um\\prog2\\adt\\tads\" />\r\n      <recent name=\"C:\\Users\\belen\\OneDrive\\Escritorio\\harTADs\\grupo13-p2-tads\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n      <recent name=\"uy.edu.um.prog2.adt.tads.MyQueue\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Menu\">\r\n    <configuration name=\"CargadeDatos\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CargadeDatos\" />\r\n      <module name=\"harTADs\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Menu\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Menu\" />\r\n      <module name=\"harTADs\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyHashImplTest.get\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MyHashImplTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"get\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyHashImplTest.put\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MyHashImplTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"put\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MyHashImplTest.remove\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"grupo13-p2-tads\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MyHashImplTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"remove\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Java Scratch\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"$PROJECT_DIR$/../PrimerParcial2021\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JavaScriptNodeJsTraceType\" factoryName=\"Spy-js for Node.js\" config=\"\" node=\"project\" node-params=\"\" app=\"\" app-params=\"\" working-dir=\"\" proxy-port=\"3547\" pass-parent-env=\"true\" limits=\"1,3,3,50\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Remote\">\r\n      <option name=\"USE_SOCKET_TRANSPORT\" value=\"true\" />\r\n      <option name=\"SERVER_MODE\" value=\"false\" />\r\n      <option name=\"SHMEM_ADDRESS\" />\r\n      <option name=\"HOST\" value=\"localhost\" />\r\n      <option name=\"PORT\" value=\"5005\" />\r\n      <option name=\"AUTO_RESTART\" value=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Menu\" />\r\n        <item itemvalue=\"Application.CargadeDatos\" />\r\n        <item itemvalue=\"JUnit.MyHashImplTest.get\" />\r\n        <item itemvalue=\"JUnit.MyHashImplTest.remove\" />\r\n        <item itemvalue=\"JUnit.MyHashImplTest.put\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"56172931-c0bc-492c-9c3c-35e5b53cee95\" name=\"Changes\" comment=\"\" />\r\n      <created>1654984875279</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1654984875279</updated>\r\n      <workItem from=\"1654984879871\" duration=\"341000\" />\r\n      <workItem from=\"1654985236705\" duration=\"523000\" />\r\n      <workItem from=\"1654985786032\" duration=\"4766000\" />\r\n      <workItem from=\"1655258410041\" duration=\"1553000\" />\r\n      <workItem from=\"1655260677445\" duration=\"1153000\" />\r\n      <workItem from=\"1655749675680\" duration=\"9410000\" />\r\n      <workItem from=\"1655918292363\" duration=\"14392000\" />\r\n      <workItem from=\"1655940655617\" duration=\"6256000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"ultima version\">\r\n      <created>1655258786118</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655258786118</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Arregle Hash e hice Tests.\">\r\n      <created>1655750203644</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655750203644</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"carga de datos\">\r\n      <created>1655946474823</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655946474823</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"ultima version\" />\r\n    <MESSAGE value=\"Arregle Hash e hice Tests.\" />\r\n    <MESSAGE value=\"carga de datos\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"carga de datos\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NumberFormatException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 50b5c750eb554a923287dbf0893a416f4fab8f99)
++++ b/.idea/workspace.xml	(date 1656016592100)
+@@ -5,9 +5,14 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="carga de datos">
+-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Beer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Beer.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Brewery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Brewery.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Review.class" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Ordenamiento.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/harTADs/CargaDeDatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/CargaDeDatos.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Menu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/harTADs/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/User.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -77,7 +82,7 @@
+       <recent name="uy.edu.um.prog2.adt.tads.MyQueue" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.Menu">
++  <component name="RunManager" selected="Application.Ordenamiento">
+     <configuration name="CargadeDatos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="CargadeDatos" />
+       <module name="harTADs" />
+@@ -92,21 +97,18 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="MyHashImplTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+-      <module name="grupo13-p2-tads" />
+-      <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
+-      <option name="METHOD_NAME" value="get" />
+-      <option name="TEST_OBJECT" value="method" />
++    <configuration name="Ordenamiento" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Ordenamiento" />
++      <module name="harTADs" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="MyHashImplTest.put" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="MyHashImplTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="grupo13-p2-tads" />
+       <option name="PACKAGE_NAME" value="" />
+       <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
+-      <option name="METHOD_NAME" value="put" />
++      <option name="METHOD_NAME" value="get" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -144,11 +146,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.Ordenamiento" />
+         <item itemvalue="Application.Menu" />
+         <item itemvalue="Application.CargadeDatos" />
+         <item itemvalue="JUnit.MyHashImplTest.get" />
+         <item itemvalue="JUnit.MyHashImplTest.remove" />
+-        <item itemvalue="JUnit.MyHashImplTest.put" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -167,7 +169,8 @@
+       <workItem from="1655260677445" duration="1153000" />
+       <workItem from="1655749675680" duration="9410000" />
+       <workItem from="1655918292363" duration="14392000" />
+-      <workItem from="1655940655617" duration="6256000" />
++      <workItem from="1655940655617" duration="21027000" />
++      <workItem from="1656008927898" duration="7432000" />
+     </task>
+     <task id="LOCAL-00001" summary="ultima version">
+       <created>1655258786118</created>
+@@ -190,7 +193,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1655946474823</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="carga de datos">
++      <created>1655947243946</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1655947243946</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: grupo13-p2-obligatorio/src/Ordenamiento.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-obligatorio/src/Ordenamiento.java b/grupo13-p2-obligatorio/src/Ordenamiento.java
+new file mode 100644
+--- /dev/null	(date 1656014097109)
++++ b/grupo13-p2-obligatorio/src/Ordenamiento.java	(date 1656014097109)
+@@ -0,0 +1,51 @@
++public class Ordenamiento<T> {
++
++    public static <T extends Comparable<T>> T[] Orden(T[] array, int begin, int end)
++    {
++        T auxiliar;
++        int i = begin;
++        int j = end;
++        T pivote = array[((begin + end)/2)];
++
++        do {
++            while (array[i].compareTo(pivote) == 1) {
++                i--;
++            }
++            while (array[j].compareTo(pivote) == 1) {
++                j++;
++            }
++            if(i<=j)
++            {
++                auxiliar=array[i];
++                array[i]=array[j];
++                array[j]=auxiliar;
++                i--;
++                j++;
++            }
++        } while (array[j].compareTo(pivote) == -1);
++
++        if(begin<j)
++        {
++            Orden(array, begin, j);
++        }
++        if(i<end)
++        {
++            Orden(array, i, end);
++        }
++        return array;
++    }
++
++    public static void main(String[] args) {
++        Ordenamiento a = new Ordenamiento();
++        User u1 = new User("Agus");
++        u1.setCantidad_de_resenias(3);
++        User u2 = new User("Lu");
++        u2.setCantidad_de_resenias(1);
++        User u3 = new User("Euge");
++        u3.setCantidad_de_resenias(2);
++        User u4 = new User("Belu");
++        u4.setCantidad_de_resenias(4);
++        User[] usuarios = {u1,u2,u3,u4};
++        a.Orden(usuarios, 0, usuarios.length-1);
++    }
++}
+\ No newline at end of file

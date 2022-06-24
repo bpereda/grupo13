@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_24_6_2022_5_43_[Changes]" date="1656060224918" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_6_2022_5_43_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 24/6/2022 5:43 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/test/grupo13-p2-tads/MyHeapImplTest.class" />
+    <option name="AFTER_PATH" value="out/test/grupo13-p2-tads/MyHeapImplTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_6_2022_5_43_[Changes]/MyHeapImplTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/harTADs/DataLoad.class" />
+    <option name="AFTER_PATH" value="out/production/harTADs/DataLoad.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_6_2022_5_43_[Changes]/DataLoad.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/harTADs/Consultas.class" />
+    <option name="AFTER_PATH" value="out/production/harTADs/Consultas.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_6_2022_5_43_[Changes]/Consultas.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/harTADs/Beer.class" />
+    <option name="AFTER_PATH" value="out/production/harTADs/Beer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_6_2022_5_43_[Changes]/Beer.class" />
+  </binary>
+</changelist>

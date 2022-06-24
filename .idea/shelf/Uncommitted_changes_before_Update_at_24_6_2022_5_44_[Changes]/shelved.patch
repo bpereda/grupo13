@@ -1,0 +1,67 @@
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeapImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeapImpl.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java
+rename from grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeapImpl.java
+rename to grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeapImpl.java	(revision 2d46bcc6810d8057d0e6adb0c46824a2ddbf89dc)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java	(date 1656060278820)
+@@ -1,4 +1,4 @@
+-package uy.edu.um.prog2.adt.tads.MyBST.MyHeap;
++package uy.edu.um.prog2.adt.tads.MyHeap;
+ 
+ import java.util.Arrays;
+ 
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeap.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeap.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java
+rename from grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeap.java
+rename to grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeap.java	(revision 2d46bcc6810d8057d0e6adb0c46824a2ddbf89dc)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java	(date 1656060278859)
+@@ -1,4 +1,4 @@
+-package uy.edu.um.prog2.adt.tads.MyBST.MyHeap;
++package uy.edu.um.prog2.adt.tads.MyHeap;
+ 
+ public interface MyHeap<K extends Comparable<K>,T>{
+     void insert(K key,T value);
+Index: grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/HeapNode.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/HeapNode.java b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java
+rename from grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/HeapNode.java
+rename to grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java
+--- a/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/HeapNode.java	(revision 2d46bcc6810d8057d0e6adb0c46824a2ddbf89dc)
++++ b/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java	(date 1656060278831)
+@@ -1,4 +1,4 @@
+-package uy.edu.um.prog2.adt.tads.MyBST.MyHeap;
++package uy.edu.um.prog2.adt.tads.MyHeap;
+ 
+ public class HeapNode<K,T> {
+     private K key;
+Index: grupo13-p2-tads/Test/MyHeapImplTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import org.junit.jupiter.api.Test;\r\nimport uy.edu.um.prog2.adt.tads.MyBST.MyHeap.MyHeap;\r\nimport uy.edu.um.prog2.adt.tads.MyBST.MyHeap.MyHeapImpl;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nclass MyHeapImplTest {\r\n\r\n    @Test\r\n    void testInsert() {\r\n        MyHeap<Integer,Integer> aHeap = new MyHeapImpl<>(false);\r\n        aHeap.insert(5,5);\r\n        aHeap.insert(2,2);\r\n        aHeap.insert(5,5);\r\n        aHeap.insert(1,1);\r\n        assertEquals(1,aHeap.delete().getKey());\r\n        assertEquals(2, aHeap.delete().getKey());\r\n        assertEquals(5,aHeap.delete().getKey());\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grupo13-p2-tads/Test/MyHeapImplTest.java b/grupo13-p2-tads/Test/MyHeapImplTest.java
+--- a/grupo13-p2-tads/Test/MyHeapImplTest.java	(revision 2d46bcc6810d8057d0e6adb0c46824a2ddbf89dc)
++++ b/grupo13-p2-tads/Test/MyHeapImplTest.java	(date 1656060278844)
+@@ -1,6 +1,6 @@
+ import org.junit.jupiter.api.Test;
+-import uy.edu.um.prog2.adt.tads.MyBST.MyHeap.MyHeap;
+-import uy.edu.um.prog2.adt.tads.MyBST.MyHeap.MyHeapImpl;
++import uy.edu.um.prog2.adt.tads.MyHeap.MyHeap;
++import uy.edu.um.prog2.adt.tads.MyHeap.MyHeapImpl;
+ 
+ import static org.junit.jupiter.api.Assertions.*;
+ 
