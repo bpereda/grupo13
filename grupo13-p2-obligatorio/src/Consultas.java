@@ -157,9 +157,5 @@ public class Consultas {
         System.out.println("Tiempo Consulta5: " + (tiempo_final - tiempo_inicial));
     }
 
-    public static void main(String[] args) {
-        Consultas prueba = new Consultas();
-        prueba.Consulta4();
-    }
 }
 

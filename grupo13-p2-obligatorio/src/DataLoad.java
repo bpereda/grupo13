@@ -87,10 +87,10 @@ public class DataLoad{
 
                     Beer newBeer = new Beer(beer_name, beer_id, beer_abv);
                     User newUser = new User(review_profilename);
-                    if (users.get(review_profilename.hashCode()) == null){
-                        users.put(review_profilename.hashCode(),newUser);
+                    if (users.get(abs(review_profilename.hashCode())) == null){
+                        users.put(abs(review_profilename.hashCode()),newUser);
                     }else{
-                        newUser = users.get(review_profilename.hashCode());
+                        newUser = users.get(abs(review_profilename.hashCode()));
                     }
                     Style newStyle = new Style(beer_style);
                     newBeer.setStyle(newStyle);

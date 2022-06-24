@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="consulta4">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_9_44_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_9_44_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" afterDir="false" />
+    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="consulta 2 y 4">
       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Beer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Beer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Brewery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Brewery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Consultas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Consultas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/DataLoad$Static.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/DataLoad$Static.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/DataLoad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/DataLoad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Ordenamiento.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656055648909</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="consulta 2 y 4">
+      <created>1656065749411</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1656065749411</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +316,8 @@
     <MESSAGE value="consulta1" />
     <MESSAGE value="consulta5" />
     <MESSAGE value="arreglar commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglar commits" />
+    <MESSAGE value="consulta 2 y 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="consulta 2 y 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

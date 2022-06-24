@@ -12,9 +12,7 @@ public class Menu
 {
     public static void Menu()
     {
-        //
 
-        //CargaDeDatos CargaDatos = new CargaDeDatos();
         int opcion = 0;
 
         while (opcion != 3)
@@ -28,9 +26,7 @@ public class Menu
 
             if (opcion == 1)
             {
-                DataLoad prueba = new DataLoad();
                 DataLoad.Carga();
-
             }
 
             if (opcion == 2)
@@ -48,7 +44,6 @@ public class Menu
                     System.out.println(" Ingrese año en formato yyyy: ");
                     String year = sc1.next();
                     consulta.Consulta1(year);
-
                 }
                 if (opcion2 == 2)
                 {
@@ -71,7 +66,6 @@ public class Menu
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-
 
                 }
                 if (opcion2 == 4){
