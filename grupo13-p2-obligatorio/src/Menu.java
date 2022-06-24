@@ -1,8 +1,6 @@
-import uy.edu.um.prog2.adt.tads.MyBST.MyHeap.HeapNode;
-import uy.edu.um.prog2.adt.tads.MyBST.MyHeap.MyHeapImpl;
+import uy.edu.um.prog2.adt.tads.MyHeap.HeapNode;
+import uy.edu.um.prog2.adt.tads.MyHeap.MyHeapImpl;
 import uy.edu.um.prog2.adt.tads.MyHash.NodeHashTable;
-import uy.edu.um.prog2.adt.tads.MyQueue.MyQueue;
-import uy.edu.um.prog2.adt.tads.MyQueue.MyQueueImpl;
 
 import java.util.Scanner;
 
@@ -10,7 +8,7 @@ public class Menu
 {
     public static void Menu()
     {
-        //DataLoad prueba = new DataLoad();
+        DataLoad prueba = new DataLoad();
         //CargaDeDatos CargaDatos = new CargaDeDatos();
         int opcion = 0;
 
