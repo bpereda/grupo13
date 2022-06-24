@@ -18,6 +18,18 @@ public class DataLoad{
     public DataLoad() {
     }
 
+    public static MyHashImpl<Long, Beer> getBeers() {
+        return beers;
+    }
+
+    public static MyHashImpl<Long, Brewery> getBreweries() {
+        return breweries;
+    }
+
+    public static MyHashImpl<Long, Review> getReviews() {
+        return reviews;
+    }
+
     public static void Carga() {
 
         try {
