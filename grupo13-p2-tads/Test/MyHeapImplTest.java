@@ -8,25 +8,14 @@ class MyHeapImplTest {
 
     @Test
     void testInsert() {
-        MyHeap<Integer> aHeap = new MyHeapImpl<>();
-        aHeap.insert(5);
-        aHeap.insert(2);
-        aHeap.insert(5);
-        aHeap.insert(1);
-        assertEquals(1,aHeap.delete());
-        assertEquals(2, aHeap.delete());
-        assertEquals(5,aHeap.delete());
+        MyHeap<Integer,Integer> aHeap = new MyHeapImpl<>(false);
+        aHeap.insert(5,5);
+        aHeap.insert(2,2);
+        aHeap.insert(5,5);
+        aHeap.insert(1,1);
+        assertEquals(1,aHeap.delete().getKey());
+        assertEquals(2, aHeap.delete().getKey());
+        assertEquals(5,aHeap.delete().getKey());
     }
 
-    @Test
-    void testInsert2(){
-        Integer[] values = {2,8,2,3,8,10,6,1,2,9,4};
-        MyHeap<Integer> aHeap = new MyHeapImpl<>(values);
-        assertEquals(1,aHeap.delete());
-        assertEquals(2,aHeap.delete());
-        assertEquals(2,aHeap.delete());
-        assertEquals(2,aHeap.delete());
-
-
-    }
 }

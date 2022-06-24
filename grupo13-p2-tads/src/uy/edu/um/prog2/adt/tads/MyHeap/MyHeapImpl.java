@@ -2,98 +2,101 @@ package uy.edu.um.prog2.adt.tads.MyHeap;
 
 import java.util.Arrays;
 
-public class MyHeapImpl<T extends Comparable<T>> implements MyHeap<T>{
-
+public class MyHeapImpl<K extends Comparable<K>,T> implements MyHeap<K,T> {
     private static final int CAPACITY = 10;
-    private T[] heap;
-    private int size;
+    private HeapNode<K, T>[] heap;
+    private int size = 0;
+    private boolean isHeapMax;
 
-    public MyHeapImpl() {
-        this.heap = (T[]) new Comparable[CAPACITY];
-        this.size = 0;
+    public MyHeapImpl(boolean isHeapMax) {
+        this.isHeapMax = isHeapMax;
+        heap = new HeapNode[CAPACITY];
+
     }
 
-    public MyHeapImpl(T[] array) {
-        heap = (T[]) new Comparable[CAPACITY];
-        size = 0;
-
-        for (T each : array) {
-            insert(each);
-        }
-    }
-
-    public T[] getHeap() {
-        return Arrays.copyOfRange(heap, 1, size + 1);
-    }
 
     @Override
-    public void insert(T value) {
-        if (this.size >= heap.length - 1) {
-            heap = this.resize();
+    public void insert(K key, T value) {
+        if (size >= heap.length - 1 ) {
+            heap = resize();
         }
-
         size++;
-        heap[size] = value;
+        HeapNode<K,T> temp = new HeapNode<>(key,value);
+        heap[size] = temp;
         bubbleUp();
+
     }
 
-    @Override
-    public T delete() {
-        T result = peek();
+    private void bubbleUp(){
+        int index = size;
+        if(isHeapMax){
+            while(hasParent(index) && (getParent(index).getKey().compareTo(heap[index].getKey())) < 0){
+                swap(index,getParentIndex(index));
+                index = getParentIndex(index);
+            }
+        }else {
+            while(hasParent(index) && (getParent(index).getKey().compareTo(heap[index].getKey())) > 0){
+                swap(index,getParentIndex(index));
+                index = getParentIndex(index);
+            }
+        }
+    }
 
-        swap(1, size);
+    private void bubbleDown(){
+        int index = 1;
+        if (isHeapMax){
+            while(hasLeftChild(index)){
+                int larger = getLeftIndex(index);
+                if (hasRightChild(index) && (heap[getLeftIndex(index)].getKey().compareTo(heap[getRightIndex(index)].getKey())) < 0){
+                    larger = getRightIndex(index);
+                }
+                if (heap[index].getKey().compareTo(heap[larger].getKey()) < 0){
+                    swap(index,larger);
+                }else break;
+                index = larger;
+            }
+        }else {
+            while(hasLeftChild(index)){
+                int smaller = getLeftIndex(index);
+                if (hasRightChild(index) && (heap[getLeftIndex(index)].getKey().compareTo(heap[getRightIndex(index)].getKey())) > 0){
+                    smaller = getRightIndex(index);
+                }
+                if (heap[index].getKey().compareTo(heap[smaller].getKey()) > 0){
+                    swap(index,smaller);
+                }else break;
+                index = smaller;
+            }
+        }
+    }
+
+    private HeapNode<K, T>[] resize(){
+        return Arrays.copyOf(heap,size+CAPACITY);
+    }
+
+
+    @Override
+    public HeapNode<K, T> delete() {
+        HeapNode<K,T> result = peek();
+
+        swap(1,size);
         heap[size] = null;
         size--;
-
         bubbleDown();
-
         return result;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public T peek() {
+    private HeapNode<K,T> peek(){
         if (isEmpty()) throw new IllegalStateException();
         return heap[1];
     }
 
+    private boolean isEmpty(){
+        return size == 0;
+    }
+
     @Override
     public int size() {
-        return size;
-    }
-
-    private T[] resize() {
-        return Arrays.copyOf(heap, heap.length + CAPACITY);
-    }
-
-    private void bubbleUp() {
-        int index = size;
-
-        while (hasParent(index) && (getParent(index).compareTo(heap[index]) > 0)) {
-            swap(index, getParentIndex(index));
-            index = getParentIndex(index);
-        }
-
-    }
-
-    private void bubbleDown() {
-        int index = 1;
-
-        while (hasLeftChild(index)) {
-            int smaller = getLeftIndex(index);
-            if (hasRightChild(index) && heap[getLeftIndex(index)].compareTo(heap[getRightIndex(index)]) > 0) {
-                smaller = getRightIndex(index);
-            }
-            if (heap[index].compareTo(heap[smaller]) > 0) {
-                swap(index, smaller);
-            }
-            else break;
-
-            index = smaller;
-        }
-
+        return 0;
     }
 
     private boolean hasParent(int i) {
@@ -120,12 +123,12 @@ public class MyHeapImpl<T extends Comparable<T>> implements MyHeap<T>{
         return i / 2;
     }
 
-    private T getParent(int i) {
+    private HeapNode<K, T> getParent(int i) {
         return heap[getParentIndex(i)];
     }
 
     private void swap(int index1, int index2) {
-        T temp = heap[index1];
+        HeapNode<K,T> temp = heap[index1];
         heap[index1] = heap[index2];
         heap[index2] = temp;
     }
