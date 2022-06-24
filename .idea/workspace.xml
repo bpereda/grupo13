@@ -4,30 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="carga de datos">
-      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Ordenamiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_10_09_PM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_22_2022_2_00_PM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_5_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_5_08_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="consulta1">
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/ArraylistNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/MyArrayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyArrayList/MyArrayListImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/CargaDeDatos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Beer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Brewery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyHeapImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/Test/MyHeapImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/HeapNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyBST/MyHeap/MyHeapImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/HeapNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/MyHeap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHeap/MyHeapImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHash/MyHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyHash/MyHash.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/harTADs/Beer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Beer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Consultas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Consultas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/harTADs/DataLoad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/DataLoad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/grupo13-p2-tads/MyHeapImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/grupo13-p2-tads/MyHeapImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Review.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +37,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -58,7 +51,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2ARum8SL7xcaY41hTeHP9l1nUcU" />
   <component name="ProjectViewState">
@@ -74,7 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/copiadelgit" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/opencsv-5.6.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -90,6 +83,9 @@
       <recent name="C:\Users\agust\IdeaProjects\grupo13\grupo13-p2-tads\src\uy\edu\um\prog2\adt\tads" />
       <recent name="C:\Users\belen\OneDrive\Escritorio\harTADs\grupo13-p2-tads" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\belen\OneDrive\Escritorio\grupo13\grupo13-p2-obligatorio" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -98,9 +94,16 @@
       <recent name="uy.edu.um.prog2.adt.tads.MyQueue" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Menu">
+  <component name="RunManager" selected="Application.Consultas">
     <configuration name="CargadeDatos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CargadeDatos" />
+      <module name="harTADs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Consultas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Consultas" />
       <module name="harTADs" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -120,22 +123,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyHashImplTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyArrayListImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayListImpl" />
       <module name="grupo13-p2-tads" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
-      <option name="METHOD_NAME" value="get" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyHashImplTest.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="grupo13-p2-tads" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyHashImplTest" />
-      <option name="METHOD_NAME" value="remove" />
-      <option name="TEST_OBJECT" value="method" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.prog2.adt.tads.MyArrayList.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Menu" />
+        <item itemvalue="Application.Consultas" />
         <item itemvalue="Application.DataLoad" />
+        <item itemvalue="Application.MyArrayListImpl" />
+        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.CargadeDatos" />
-        <item itemvalue="JUnit.MyHashImplTest.get" />
-        <item itemvalue="JUnit.MyHashImplTest.remove" />
       </list>
     </recent_temporary>
   </component>
@@ -186,8 +182,6 @@
       <workItem from="1655749675680" duration="9410000" />
       <workItem from="1655918292363" duration="14392000" />
       <workItem from="1655940655617" duration="5620000" />
-      <workItem from="1656038823969" duration="867000" />
-      <workItem from="1656039997002" duration="13969000" />
     </task>
     <task id="LOCAL-00001" summary="ultima version">
       <created>1655258786118</created>
@@ -217,7 +211,63 @@
       <option name="project" value="LOCAL" />
       <updated>1656015062223</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mejora data load">
+      <created>1656015326820</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656015326821</updated>
+    </task>
+    <task id="LOCAL-00006" summary="mejora en tiempo">
+      <created>1656020675036</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656020675036</updated>
+    </task>
+    <task id="LOCAL-00007" summary="mejora en tiempo">
+      <created>1656020949768</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656020949768</updated>
+    </task>
+    <task id="LOCAL-00008" summary="no funciona push">
+      <created>1656021679560</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656021679560</updated>
+    </task>
+    <task id="LOCAL-00009" summary="no funciona push">
+      <created>1656022180224</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656022180224</updated>
+    </task>
+    <task id="LOCAL-00010" summary="no funciona push">
+      <created>1656022401250</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656022401250</updated>
+    </task>
+    <task id="LOCAL-00011" summary="mejoro heap">
+      <created>1656031688085</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1656031688085</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update dataload">
+      <created>1656032704858</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1656032704858</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +278,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -239,7 +301,12 @@
     <MESSAGE value="Arregle Hash e hice Tests." />
     <MESSAGE value="funciona data load" />
     <MESSAGE value="mejora data load" />
-    <option name="LAST_COMMIT_MESSAGE" value="mejora data load" />
+    <MESSAGE value="mejora en tiempo" />
+    <MESSAGE value="no funciona push" />
+    <MESSAGE value="mejoro heap" />
+    <MESSAGE value="update dataload" />
+    <MESSAGE value="consulta1" />
+    <option name="LAST_COMMIT_MESSAGE" value="consulta1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -249,15 +316,19 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="4" />
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="16" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="17" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Review" memberName="overallScore" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

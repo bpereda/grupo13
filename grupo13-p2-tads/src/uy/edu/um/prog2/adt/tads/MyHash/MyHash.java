@@ -10,4 +10,5 @@ public interface MyHash<Key, Value> {
 
     int size();
 
+    NodeHashTable<Key,Value>[] getElements();
 }
