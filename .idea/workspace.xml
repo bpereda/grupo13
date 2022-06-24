@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56172931-c0bc-492c-9c3c-35e5b53cee95" name="Changes" comment="arreglar commits">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_9_44_PM_[Changes]/MyHashImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_9_44_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2022_9_44_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/beer_dataset_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo13-p2-tads/uy/edu/um/prog2/adt/tads/MyArrayList/ArraylistNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/harTADs/Brewery.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/harTADs/DataLoad$Static.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Consultas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/DataLoad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Ordenamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-obligatorio/src/Ordenamiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/grupo13-p2-tads/src/uy/edu/um/prog2/adt/tads/MyHash/MyHashImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/harTADs/Beer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Beer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/harTADs/Consultas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/Consultas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/harTADs/DataLoad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/DataLoad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/harTADs/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/harTADs/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/grupo13-p2-tads/MyHeapImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/grupo13-p2-tads/MyHeapImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +87,7 @@
       <recent name="uy.edu.um.prog2.adt.tads.MyQueue" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DataLoad">
+  <component name="RunManager" selected="Application.Menu">
     <configuration name="CargadeDatos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CargadeDatos" />
       <module name="harTADs" />
@@ -157,10 +151,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.DataLoad" />
         <item itemvalue="Application.Consultas" />
         <item itemvalue="Application.MyArrayListImpl" />
-        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.CargadeDatos" />
       </list>
     </recent_temporary>
@@ -273,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656050581888</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="arreglar commits">
+      <created>1656055648909</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1656055648909</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

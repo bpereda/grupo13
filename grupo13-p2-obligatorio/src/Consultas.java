@@ -6,13 +6,14 @@ import uy.edu.um.prog2.adt.tads.MyHeap.MyHeap;
 import uy.edu.um.prog2.adt.tads.MyHeap.MyHeapImpl;
 
 import java.security.Key;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
 public class Consultas {
 
     public Consultas() {
-        DataLoad.Carga();
     }
 
     private MyHash<Long,Brewery> breweries = DataLoad.getBreweries();
@@ -58,51 +59,55 @@ public class Consultas {
     }
 
     public void Consulta2(){
-            MyHeapImpl<String, User> UserTop15 = new MyHeapImpl<>(true);
-            NodeHashTable[] review_vector = reviews.getElements();
-            User[] user_array = new User[review_vector.length];
-            int j = 0;
-            for(int i = 0; i < review_vector.length; i++)
-            {
-                if(review_vector[i] != null)
+        long tiempo_final;
+        long tiempo_inicial = System.currentTimeMillis();
+        MyHeapImpl<String, User> UserTop15 = new MyHeapImpl<>(true);
+        NodeHashTable[] review_vector = reviews.getElements();
+        User[] user_array = new User[review_vector.length];
+        int j = 0;
+        for(int i = 0; i < review_vector.length; i++) {
+            if(review_vector[i] != null) {
+                Review review_temp = (Review) review_vector[i].getValue();
+                User user_temp = review_temp.getUser();
+                for(int x=0;x<user_array.length;x++)
                 {
-                    Review review_temp = (Review) review_vector[i].getValue();
-                    User user_temp = review_temp.getUser();
-                    for(int x=0;x<user_array.length;x++)
+                    if(user_array[x]!=null)
                     {
-                        if(user_array[x]!=null)
+                        if (user_temp.getUsername().equals(user_array[x].getUsername()))
                         {
-                            if (user_temp.getUsername().equals(user_array[x].getUsername()))
-                            {
-                                user_temp = user_array[x];
-                            }
+                            user_temp = user_array[x];
                         }
                     }
-                    if(user_temp.getCantidad_de_resenias()==0)
-                    {
-                        user_array[j] = user_temp;
-                        j++;
-                    }
-                    int incremento = user_temp.getCantidad_de_resenias() + 1;
-                    user_temp.setCantidad_de_resenias(incremento);
                 }
-
-            }
-            for (int num = 0; num < user_array.length; num++) {
-                if(user_array[num]!=null)
+                if(user_temp.getCantidad_de_resenias()==0)
                 {
-                    UserTop15.insert(user_array[num].getUsername(), user_array[num]);
+                    user_array[j] = user_temp;
+                    j++;
                 }
+                int incremento = user_temp.getCantidad_de_resenias() + 1;
+                user_temp.setCantidad_de_resenias(incremento);
             }
+
+        }
+        for (int num = 0; num < user_array.length; num++) {
+            if(user_array[num]!=null)
+            {
+                UserTop15.insert(user_array[num].getUsername(), user_array[num]);
+            }
+        }
         for(int z=0;z<15;z++)
         {
             HeapNode<String, User> temporal = UserTop15.delete();
             System.out.println("Nombre: " + temporal.getValue().getUsername() + "Cantidad de Resenias: " + temporal.getValue().getCantidad_de_resenias());
         }
+        tiempo_final = System.currentTimeMillis();
+        System.out.println("Tiempo Consulta1: " + (tiempo_final - tiempo_inicial));
 
     }
 
     public void Consulta3(Date inicio, Date fin){
+        long tiempo_final;
+        long tiempo_inicial = System.currentTimeMillis();
         int count = 0;
         NodeHashTable<Long,Review>[] reviewsElements = reviews.getElements();
         for (NodeHashTable<Long, Review> reviewsElement : reviewsElements) {
@@ -112,7 +117,13 @@ public class Consultas {
                 }
             }
         }
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        String fecha_inicio = dateFormat.format(inicio);
+        String fecha_fin = dateFormat.format(fin);
+        System.out.println("Fecha de inicio: "+fecha_inicio+" Fecha de fin: "+fecha_fin+" Reviews entre estas fechas: "+count);
 
+        tiempo_final = System.currentTimeMillis();
+        System.out.println("Tiempo Consulta3: " + (tiempo_final - tiempo_inicial));
     }
 
     public void Consulta5(){
@@ -137,9 +148,6 @@ public class Consultas {
 
     public static void main(String[] args) {
         Consultas prueba = new Consultas();
-        //prueba.Consulta1("1970");
-        //prueba.Consulta5();
-        //prueba.Consulta2();
     }
 }
 
