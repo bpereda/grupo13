@@ -11,14 +11,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Hashtable;
 
+import static java.lang.Math.abs;
+
 @SuppressWarnings("ALL")
 public class DataLoad{
     static MyHashImpl<Long, Beer> beers = new MyHashImpl<>();
     static MyHashImpl<Long, Brewery> breweries = new MyHashImpl<>();
-    static MyHash<String,User> users = new MyHashImpl<>();
+    static MyHash<Integer,User> users = new MyHashImpl<>();
     static MyHashImpl<Long, Review> reviews = new MyHashImpl<>();
 
     public DataLoad() {
+    }
+
+    public static MyHash<Integer, User> getUsers() {
+        return users;
     }
 
     public static MyHashImpl<Long, Beer> getBeers() {
@@ -37,7 +43,7 @@ public class DataLoad{
 
         try {
             long tiempo_final;
-            FileReader fileReader = new FileReader("C:\\Users\\belen\\OneDrive - Universidad de Montevideo\\Facultad\\Tercer Semestre\\Programación II\\Obligatorio2022\\2022_obligatorio_dataset\\beer_dataset_full.csv");
+            FileReader fileReader = new FileReader("C:\\Users\\agust\\Downloads\\2022_obligatorio_dataset\\beer_dataset_full.csv");
             BufferedReader br = new BufferedReader(fileReader);
             String[] vectorStrings;
             String line;
@@ -81,11 +87,11 @@ public class DataLoad{
 
                     Beer newBeer = new Beer(beer_name, beer_id, beer_abv);
                     User newUser = new User(review_profilename);
-                    /*if (users.get(review_profilename) == null){
-                        users.put(review_profilename,newUser);
+                    if (users.get(review_profilename.hashCode()) == null){
+                        users.put(review_profilename.hashCode(),newUser);
                     }else{
-                        newUser = users.get(review_profilename);
-                    }*/
+                        newUser = users.get(review_profilename.hashCode());
+                    }
                     Style newStyle = new Style(beer_style);
                     newBeer.setStyle(newStyle);
                     Brewery newBrewery = new Brewery(brewery_id, brewery_name);

@@ -14,7 +14,24 @@ public class Beer {
     private long id;
     private double abv;
     private Style style;
-    private long aromaScore;
+    private double aromaScoreAvg = 0;
+
+    public double AvgAroma(){
+        double sum = 0;
+        for(int i=0; i<this.getNumberReviews(); i++)
+        {
+            sum += this.getReviews().get(i).getAromaScore();
+        }
+        return this.aromaScoreAvg= sum/this.getNumberReviews();
+    }
+
+    public double getAromaScoreAvg() {
+        return aromaScoreAvg;
+    }
+
+    public void setAromaScoreAvg(double aromaScoreAvg) {
+        this.aromaScoreAvg = aromaScoreAvg;
+    }
 
     private MyArrayList<Review> reviews = new MyArrayListImpl<>();
 

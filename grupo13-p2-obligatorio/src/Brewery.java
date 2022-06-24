@@ -8,6 +8,7 @@ public class Brewery {
     private long id;
     private String name;
 
+
     private MyHash<Long,Beer> beers = new MyHashImpl<>();
     private int reviewsPerYear = 0;
 

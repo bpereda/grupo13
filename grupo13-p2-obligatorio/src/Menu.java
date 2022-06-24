@@ -52,7 +52,7 @@ public class Menu
                 }
                 if (opcion2 == 2)
                 {
-
+                    consulta.Consulta2();
                 }
                 if (opcion2 == 3){
                     System.out.println("Ingrese una fecha de comienzo dd/mm/yy: ");
@@ -75,7 +75,7 @@ public class Menu
 
                 }
                 if (opcion2 == 4){
-
+                    consulta.Consulta4();
                 }
                 if(opcion2 == 5){
                     consulta.Consulta5();

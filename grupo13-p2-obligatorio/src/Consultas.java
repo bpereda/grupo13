@@ -1,13 +1,10 @@
-import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
 import uy.edu.um.prog2.adt.tads.MyHash.NodeHashTable;
 import uy.edu.um.prog2.adt.tads.MyHeap.HeapNode;
 import uy.edu.um.prog2.adt.tads.MyHeap.MyHeap;
 import uy.edu.um.prog2.adt.tads.MyHeap.MyHeapImpl;
 
-import java.security.Key;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
@@ -59,46 +56,37 @@ public class Consultas {
     }
 
     public void Consulta2(){
+
         long tiempo_final;
         long tiempo_inicial = System.currentTimeMillis();
-        MyHeapImpl<String, User> UserTop15 = new MyHeapImpl<>(true);
-        NodeHashTable[] review_vector = reviews.getElements();
-        User[] user_array = new User[review_vector.length];
-        int j = 0;
-        for(int i = 0; i < review_vector.length; i++) {
-            if(review_vector[i] != null) {
-                Review review_temp = (Review) review_vector[i].getValue();
-                User user_temp = review_temp.getUser();
-                for(int x=0;x<user_array.length;x++)
-                {
-                    if(user_array[x]!=null)
-                    {
-                        if (user_temp.getUsername().equals(user_array[x].getUsername()))
-                        {
-                            user_temp = user_array[x];
-                        }
-                    }
-                }
-                if(user_temp.getCantidad_de_resenias()==0)
-                {
-                    user_array[j] = user_temp;
-                    j++;
-                }
-                int incremento = user_temp.getCantidad_de_resenias() + 1;
-                user_temp.setCantidad_de_resenias(incremento);
-            }
+        MyHeapImpl<Integer, User> UserTop15 = new MyHeapImpl<>(true);
+        MyHash<Long, Review> reviews = DataLoad.getReviews();
+        MyHash<Integer, User> users = DataLoad.getUsers();
+        NodeHashTable[] usersElements = users.getElements();
+        NodeHashTable[] reviewsElements = reviews.getElements();
 
-        }
-        for (int num = 0; num < user_array.length; num++) {
-            if(user_array[num]!=null)
+        for(NodeHashTable<Long, Review> reviewElement : reviewsElements)
+        {
+            if (reviewElement != null)
             {
-                UserTop15.insert(user_array[num].getUsername(), user_array[num]);
+                Review reviewTemp = reviewElement.getValue();
+                User userTemp = reviewTemp.getUser();
+                userTemp.setCountReviews();
             }
         }
+
+        for(NodeHashTable<Integer, User> userElement : usersElements)
+        {
+            if(userElement!=null)
+            {
+                UserTop15.insert(userElement.getValue().getcountReviews(), userElement.getValue());
+            }
+        }
+
         for(int z=0;z<15;z++)
         {
-            HeapNode<String, User> temporal = UserTop15.delete();
-            System.out.println("Nombre: " + temporal.getValue().getUsername() + "Cantidad de Resenias: " + temporal.getValue().getCantidad_de_resenias());
+            HeapNode<Integer, User> temporal = UserTop15.delete();
+            System.out.println("Nombre: " + temporal.getValue().getUsername() + ", Cantidad de Resenias: " + temporal.getValue().getcountReviews());
         }
         tiempo_final = System.currentTimeMillis();
         System.out.println("Tiempo Consulta1: " + (tiempo_final - tiempo_inicial));
@@ -126,6 +114,29 @@ public class Consultas {
         System.out.println("Tiempo Consulta3: " + (tiempo_final - tiempo_inicial));
     }
 
+    public void Consulta4()
+    {
+        long tiempo_inicial = System.currentTimeMillis();
+        MyHash<Long, Beer> beers = DataLoad.getBeers();
+        NodeHashTable[] beersElements = beers.getElements();
+        MyHeapImpl<Double, Beer> Top7 = new MyHeapImpl<>(true);
+        for(NodeHashTable<Long, Beer> beersElement : beersElements)
+        {
+            if(beersElement!=null)
+            {
+                beersElement.getValue().AvgAroma();
+                Top7.insert(beersElement.getValue().getAromaScoreAvg(), beersElement.getValue());
+            }
+        }
+        for(int i=0; i<7; i++)
+        {
+            HeapNode<Double, Beer> temporal = Top7.delete();
+            System.out.println("Cerveza: " + temporal.getValue().getName() + ", Promedio de Aroma " + temporal.getValue().getAromaScoreAvg());
+        }
+        long tiempo_final = System.currentTimeMillis();
+        System.out.println("Tiempo consulta 4: " + (tiempo_final - tiempo_inicial));
+    }
+
     public void Consulta5(){
         long tiempo_final;
         long tiempo_inicial = System.currentTimeMillis();
@@ -148,6 +159,7 @@ public class Consultas {
 
     public static void main(String[] args) {
         Consultas prueba = new Consultas();
+        prueba.Consulta4();
     }
 }
 
