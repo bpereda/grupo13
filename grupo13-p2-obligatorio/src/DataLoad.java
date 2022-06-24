@@ -129,7 +129,7 @@ public class DataLoad{
                             newBeer.addReview(newReview);
                             beers.remove(beer_id);
                             beers.put(beer_id, newBeer);
-                            //tengo que volver a agregarla a newBrewerie??? (creo que no pero ta)
+
                         }
                     }
                 }
