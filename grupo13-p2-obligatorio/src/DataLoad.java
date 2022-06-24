@@ -1,3 +1,6 @@
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayListImpl;
+import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
 
 import java.io.BufferedReader;
@@ -12,7 +15,7 @@ import java.util.Hashtable;
 public class DataLoad{
     static MyHashImpl<Long, Beer> beers = new MyHashImpl<>();
     static MyHashImpl<Long, Brewery> breweries = new MyHashImpl<>();
-
+    static MyHash<String,User> users = new MyHashImpl<>();
     static MyHashImpl<Long, Review> reviews = new MyHashImpl<>();
 
     public DataLoad() {
@@ -78,12 +81,18 @@ public class DataLoad{
 
                     Beer newBeer = new Beer(beer_name, beer_id, beer_abv);
                     User newUser = new User(review_profilename);
+                    /*if (users.get(review_profilename) == null){
+                        users.put(review_profilename,newUser);
+                    }else{
+                        newUser = users.get(review_profilename);
+                    }*/
                     Style newStyle = new Style(beer_style);
                     newBeer.setStyle(newStyle);
                     Brewery newBrewery = new Brewery(brewery_id, brewery_name);
                     Review newReview = new Review(review_id, review_date, review_overall, review_aroma, review_appearance, review_taste, newUser, brewery_id);
                     reviews.put(beer_id,newReview);
                     newBeer.addReview(newReview);
+
 
                     if (breweries.get(brewery_id) == null) {
                         newBrewery.addBeer(newBeer);
