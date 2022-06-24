@@ -1,4 +1,4 @@
-package uy.edu.um.prog2.adt.tads.MyBST.MyHeap;
+package uy.edu.um.prog2.adt.tads.MyHeap;
 
 import java.util.Arrays;
 
