@@ -1,4 +1,4 @@
-public class Ordenamiento<T> {
+/*public class Ordenamiento<T> {
 
     public static <T extends Comparable<T>> T[] Orden(T[] array, int begin, int end)
     {
@@ -35,7 +35,7 @@ public class Ordenamiento<T> {
         return array;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Ordenamiento a = new Ordenamiento();
         User u1 = new User("Agus");
         u1.setCantidad_de_resenias(3);
@@ -48,4 +48,4 @@ public class Ordenamiento<T> {
         User[] usuarios = {u1,u2,u3,u4};
         a.Orden(usuarios, 0, usuarios.length-1);
     }
-}
+}*/
