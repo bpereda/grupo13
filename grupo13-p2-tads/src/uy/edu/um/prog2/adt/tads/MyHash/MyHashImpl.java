@@ -1,16 +1,17 @@
 package uy.edu.um.prog2.adt.tads.MyHash;
 
+import static java.lang.Math.abs;
+
 public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
 
-    private NodeHashTable<Key, Value>[] elements = new NodeHashTable[INITIAL_SIZE];
-    private final static int INITIAL_SIZE = 20;
+    private NodeHashTable<Key, Value>[] elements;
+    private final static int INITIAL_SIZE = 10;
     public int load;
     private final static float LOAD_FACTOR = 0.8f;
 
-    public void MyHashTableImpl()
-    {
+    public MyHashImpl() {
         this.elements = new NodeHashTable[INITIAL_SIZE];
-        load = 0;
+        this.load = 0;
     }
 
     public NodeHashTable<Key, Value>[] getElements() {
@@ -30,14 +31,16 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
     }
 
     @Override
-    public void put(Key K, Value V)
+    public void put(Key key, Value V)
     {
-        int position = K.hashCode() %  elements.length;
+        int position = Math.abs(key.hashCode()) %  elements.length;
+
         if (elements[position] == null || elements[position].isDeleted()
-                || elements[position].getKey().equals(K))
+                || elements[position].getKey().equals(key))
         {
-            NodeHashTable<Key, Value> nodo = new NodeHashTable<>(K,V);
+            NodeHashTable<Key, Value> nodo = new NodeHashTable(key,V);
             elements[position] = nodo;
+            load++;
         }else
         {
             int nroColision = 1;
@@ -45,17 +48,18 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
 
             do {
                 nroColision++;
-                newPosition = (K.hashCode() + colision(nroColision)) % elements.length;
+                newPosition = (Math.abs(key.hashCode()) + colision(nroColision)) % elements.length;
             } while(elements[newPosition]!=null && !elements[newPosition].isDeleted()
                     && nroColision < elements.length);
 
             if(nroColision < elements.length)
             {
-                NodeHashTable<Key, Value> node = new NodeHashTable<>(K,V);
+                NodeHashTable<Key, Value> node = new NodeHashTable<>(key,V);
                 elements[newPosition] = node; // Aca YO cambie position por new position
+                load++;
             }
         }
-        load++;
+        //load++;
         // me fijo lo del factor de carga
         if (load >= elements.length*LOAD_FACTOR) //relacion entre largo y elementos cargados
         {
@@ -68,6 +72,7 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
         NodeHashTable<Key, Value>[] newElements = new NodeHashTable[newSize];
         NodeHashTable<Key, Value>[] oldElements = elements;
         elements = newElements;
+        //load = 0;
         for (int i = 0; i<elements.length; i++)
         {
             if (elements[i] != null && !elements[i].isDeleted())
@@ -83,27 +88,26 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
     }
 
     @Override
-    public Value get(Key k) {
+    public Value get(Key key) {
 
-        int posititon = k.hashCode() % elements.length;
+        int position = Math.abs(key.hashCode()) % elements.length;
         Value exit = null;
-        if (this.elements[posititon] != null)
+        if (this.elements[position] != null)
         {
-            if (!this.elements[posititon].isDeleted()
-                    && this.elements[posititon].getKey().equals(k))
+            if (!this.elements[position].isDeleted()
+                    && this.elements[position].getKey().equals(key))
             {
                 // encontre el valor
-                exit = elements[posititon].getValue();
+                exit = this.elements[position].getValue();
             }else{
-
                 //pudo haber una colision
                 int nroColision = 1;
                 int newPosition = 0;
 
                 do {
                     nroColision++;
-                    newPosition = (k.hashCode() + colision(nroColision)) % elements.length;
-                } while(elements[newPosition]!=null && !elements[newPosition].isDeleted()
+                    newPosition = (Math.abs(key.hashCode()) + colision(nroColision)) % elements.length;
+                } while(elements[newPosition]!=null && !elements[position].isDeleted() && elements[newPosition].getKey() == key
                         && nroColision < elements.length);
                 if(nroColision < elements.length)
                 {
@@ -118,23 +122,26 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
     }
 
     @Override
-    public void remove(Key K) {
+    public void remove(Key key) {
 
-        int posititon = K.hashCode() % elements.length;
-        if (this.elements[posititon] != null) {
-            if (!this.elements[posititon].isDeleted()
-                    && this.elements[posititon].getKey().equals(K)) {
-                elements[posititon].setDeleted(true);
+        int position = Math.abs(key.hashCode()) % elements.length;
+        if (this.elements[position] != null) {
+            if (!this.elements[position].isDeleted()
+                    && this.elements[position].getKey().equals(key)) {
+                elements[position].setDeleted(true);
                 this.load--;
             } else {
                 int nroColision = 1;
                 int newPosition = 0;
                 do {
                     nroColision++;
-                    newPosition = (K.hashCode() + colision(nroColision)) % elements.length;
-                } while (elements[newPosition] != null && nroColision < elements.length && !elements[newPosition].getKey().equals(K));
+                    newPosition = (Math.abs(key.hashCode()) + colision(nroColision)) % elements.length;
+                } while (elements[newPosition] != null && nroColision < elements.length
+                        && !elements[newPosition].getKey().equals(key) && nroColision < elements.length
+                        && elements[newPosition].getKey() == key);
 
-                if (elements[newPosition] != null && nroColision < elements.length) {
+                if (elements[newPosition] != null && nroColision < elements.length && !elements[newPosition].isDeleted())
+                {
                     elements[newPosition].setDeleted(true);
                     this.load--;
                 }
@@ -142,11 +149,9 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
         }
     }
 
-
     @Override
     public int size() {
         return elements.length;
     }
-
 
 }

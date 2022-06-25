@@ -3,6 +3,7 @@ package uy.edu.um.prog2.adt.tads.MyHeap;
 import java.util.Arrays;
 
 public class MyHeapImpl<K extends Comparable<K>,T> implements MyHeap<K,T> {
+
     private static final int CAPACITY = 10;
     private HeapNode<K, T>[] heap;
     private int size = 0;
@@ -13,7 +14,6 @@ public class MyHeapImpl<K extends Comparable<K>,T> implements MyHeap<K,T> {
         heap = new HeapNode[CAPACITY];
 
     }
-
 
     @Override
     public void insert(K key, T value) {

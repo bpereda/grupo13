@@ -20,8 +20,6 @@ public class Review {
         this.date = date;
     }
 
-
-
     public Review(long id, java.util.Date date, double overallScore, double aromaScore, double appearanceScore, double flavourScore, User user, long brewery) {
         this.id = id;
         this.date = date;

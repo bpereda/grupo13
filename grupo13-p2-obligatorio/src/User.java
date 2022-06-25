@@ -2,10 +2,9 @@ public class User {
     private String username;
     private int countReviews = 0;
 
-    public void setCountReviews(){
+    public void setCountReviewsInc(){
         this.countReviews++;
     }
-
     public User(String username) {
         this.username = username;
     }

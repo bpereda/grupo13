@@ -48,12 +48,16 @@ public class DataLoad{
             String[] vectorStrings;
             String line;
             long tiempo_inicial = System.currentTimeMillis();
-
-
+            int cantidadTotal = 0;
+            int cantidadError = 0;
+            /*int cantidadbeerhash = 0;
+            int cantidadbreweriehash = 0;
+            int cantidadreviewhash = 0;
+            int cantidaduserhash = 0;*/
             //Chequeos chequeo = new Chequeos();
             br.readLine();
             while ((line = br.readLine()) != null) {
-
+                cantidadTotal++;
                 vectorStrings = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
                 boolean check = false;
                 if (vectorStrings[12] != null) {
@@ -64,6 +68,10 @@ public class DataLoad{
                             break;
                         }
                     }
+                }
+
+                if (!check) {
+                    cantidadError++;
                 }
 
                 if (check) {
@@ -87,23 +95,27 @@ public class DataLoad{
 
                     Beer newBeer = new Beer(beer_name, beer_id, beer_abv);
                     User newUser = new User(review_profilename);
-                    if (users.get(abs(review_profilename.hashCode())) == null){
-                        users.put(abs(review_profilename.hashCode()),newUser);
+                    if (users.get(review_profilename.hashCode()) == null){
+                        users.put(review_profilename.hashCode(),newUser);
+                        //cantidaduserhash++;
                     }else{
-                        newUser = users.get(abs(review_profilename.hashCode()));
+                        newUser = users.get(review_profilename.hashCode());
                     }
+
                     Style newStyle = new Style(beer_style);
                     newBeer.setStyle(newStyle);
                     Brewery newBrewery = new Brewery(brewery_id, brewery_name);
                     Review newReview = new Review(review_id, review_date, review_overall, review_aroma, review_appearance, review_taste, newUser, brewery_id);
                     reviews.put(beer_id,newReview);
+                    //cantidadbreweriehash++;
                     newBeer.addReview(newReview);
-
 
                     if (breweries.get(brewery_id) == null) {
                         newBrewery.addBeer(newBeer);
                         breweries.put(brewery_id, newBrewery);
                         beers.put(beer_id, newBeer);
+                        //cantidadbreweriehash++;
+                        //cantidadbeerhash++;
                     } else {
                         newBrewery = breweries.get(brewery_id);
                         if (beers.get(beer_id) == null) {
@@ -119,22 +131,25 @@ public class DataLoad{
                             beers.put(beer_id, newBeer);
                             //tengo que volver a agregarla a newBrewerie??? (creo que no pero ta)
                         }
-
                     }
-
-
                 }
-
             }
 
+            /*System.out.println("Hash Reviews " + cantidadbreweriehash);*/
+            //System.out.println("Hash Users " + cantidaduserhash);
+            /*System.out.println("Hash Beers " + cantidadbeerhash);
+            System.out.println("Hash Breweries " + cantidadbreweriehash);*/
+            /*System.out.println("Hash Reviews Posta " + reviews.load);
+            System.out.println("Hash Users Posta " + users.size());
+            System.out.println("Hash Beers Posta " + beers.load);
+            System.out.println("Hash Breweries Posta " + breweries.load);*/
 
+            System.out.println("Cantidad Total " + cantidadTotal + " Cantidad Error " + cantidadError);
             tiempo_final = System.currentTimeMillis();
             System.out.println("Tiempo de carga: " + (tiempo_final - tiempo_inicial));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public static void main(String[] args) {

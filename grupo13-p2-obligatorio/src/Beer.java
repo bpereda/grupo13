@@ -22,7 +22,8 @@ public class Beer {
         {
             sum += this.getReviews().get(i).getAromaScore();
         }
-        return this.aromaScoreAvg= sum/this.getNumberReviews();
+        double AvgTot = this.aromaScoreAvg= sum/this.getNumberReviews();
+        return AvgTot;
     }
 
     public double getAromaScoreAvg() {

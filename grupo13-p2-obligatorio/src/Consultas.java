@@ -32,10 +32,8 @@ public class Consultas {
                         if(breweries.get(breweryId) != null){
                             breweries.get(breweryId).setReviewsPerYear();
                         }
-
                     }
                 }
-
             }
         }
         for (int i = 0; i < breweries.size(); i++) {
@@ -43,9 +41,7 @@ public class Consultas {
                 if (breweries.get(breweriesElements[i].getKey()) != null){
                     topTen.insert(breweries.get(breweriesElements[i].getKey()).getReviewsPerYear(),breweriesElements[i].getValue());
                 }
-
             }
-
         }
         for (int i = 0; i < 10; i++) {
             HeapNode<Integer,Brewery> temp = topTen.delete();
@@ -64,6 +60,11 @@ public class Consultas {
         MyHash<Integer, User> users = DataLoad.getUsers();
         NodeHashTable[] usersElements = users.getElements();
         NodeHashTable[] reviewsElements = reviews.getElements();
+        //int contador = 0;
+        //int contador2 = 0;
+        //int contador3 = 0;
+        //System.out.println("Elementos del hash reviews: "+ DataLoad.reviews.load);
+        //System.out.println("Elementos del arrayhash reviews: "+ reviews.size());
 
         for(NodeHashTable<Long, Review> reviewElement : reviewsElements)
         {
@@ -71,8 +72,10 @@ public class Consultas {
             {
                 Review reviewTemp = reviewElement.getValue();
                 User userTemp = reviewTemp.getUser();
-                userTemp.setCountReviews();
+                users.get(userTemp.getUsername().hashCode()).setCountReviewsInc();
+                //contador++;
             }
+            //contador2++;
         }
 
         for(NodeHashTable<Integer, User> userElement : usersElements)
@@ -124,14 +127,14 @@ public class Consultas {
         {
             if(beersElement!=null)
             {
-                beersElement.getValue().AvgAroma();
+                beersElement.getValue().setAromaScoreAvg(beersElement.getValue().AvgAroma());
                 Top7.insert(beersElement.getValue().getAromaScoreAvg(), beersElement.getValue());
             }
         }
         for(int i=0; i<7; i++)
         {
             HeapNode<Double, Beer> temporal = Top7.delete();
-            System.out.println("Cerveza: " + temporal.getValue().getName() + ", Promedio de Aroma " + temporal.getValue().getAromaScoreAvg());
+            System.out.println("Cerveza: " + temporal.getValue().getStyle().getName() + ", Promedio de Aroma " + temporal.getValue().getAromaScoreAvg());
         }
         long tiempo_final = System.currentTimeMillis();
         System.out.println("Tiempo consulta 4: " + (tiempo_final - tiempo_inicial));

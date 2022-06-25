@@ -12,7 +12,6 @@ public class Menu
 {
     public static void Menu()
     {
-
         int opcion = 0;
 
         while (opcion != 3)
@@ -77,8 +76,6 @@ public class Menu
             }
         }
     }
-
-
 
     public static void main(String[] args)
     {
