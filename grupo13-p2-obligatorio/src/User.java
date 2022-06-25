@@ -1,10 +1,7 @@
 public class User {
     private String username;
-    private int countReviews = 0;
+    private int cantReviews = 0;
 
-    public void setCountReviewsInc(){
-        this.countReviews++;
-    }
     public User(String username) {
         this.username = username;
     }
@@ -17,11 +14,11 @@ public class User {
         this.username = username;
     }
 
-    public int getcountReviews() {
-        return countReviews;
+    public int getCantReviews() {
+        return cantReviews;
     }
 
-    public void setCountReviews(int countReviews) {
-        this.countReviews = countReviews;
+    public void setCantReviews(int cantReviews) {
+        this.cantReviews = cantReviews;
     }
 }

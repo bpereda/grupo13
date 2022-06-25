@@ -1,6 +1,6 @@
 import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
 import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayListImpl;
-import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
+import uy.edu.um.prog2.adt.tads.MyHash.MyHashtable;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
 
 import java.io.BufferedReader;
@@ -9,47 +9,50 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Hashtable;
 
 import static java.lang.Math.abs;
 
-@SuppressWarnings("ALL")
+
 public class DataLoad{
-    static MyHashImpl<Long, Beer> beers = new MyHashImpl<>();
-    static MyHashImpl<Long, Brewery> breweries = new MyHashImpl<>();
-    static MyHash<Integer,User> users = new MyHashImpl<>();
-    static MyHashImpl<Long, Review> reviews = new MyHashImpl<>();
+    static MyHashtable<Long, Beer> beers = new MyHashImpl<>();
+    static MyHashtable<Long, Brewery> breweries = new MyHashImpl<>();
+    static MyHashtable<String,User> users = new MyHashImpl<>();
+    static MyHashtable<Long, Review> reviews = new MyHashImpl<>();
+    static MyHashtable<String,Style> styles = new MyHashImpl<>();
 
     public DataLoad() {
     }
 
-    public static MyHash<Integer, User> getUsers() {
+    public static MyHashtable<String, User> getUsers() {
         return users;
     }
 
-    public static MyHashImpl<Long, Beer> getBeers() {
+    public static MyHashtable<Long, Beer> getBeers() {
         return beers;
     }
 
-    public static MyHashImpl<Long, Brewery> getBreweries() {
+    public static MyHashtable<Long, Brewery> getBreweries() {
         return breweries;
     }
 
-    public static MyHashImpl<Long, Review> getReviews() {
+    public static MyHashtable<Long, Review> getReviews() {
         return reviews;
     }
 
+    public static MyHashtable<String, Style> getStyles() {
+        return styles;
+    }
+
     public static void Carga() {
+        long countCerveza = 0;
 
         try {
             long tiempo_final;
-            FileReader fileReader = new FileReader("C:\\Users\\agust\\Downloads\\2022_obligatorio_dataset\\beer_dataset_full.csv");
+            FileReader fileReader = new FileReader("C:\\Users\\belen\\OneDrive - Universidad de Montevideo\\Facultad\\Tercer Semestre\\Programación II\\Obligatorio2022\\2022_obligatorio_dataset\\beer_dataset_full.csv");
             BufferedReader br = new BufferedReader(fileReader);
             String[] vectorStrings;
             String line;
             long tiempo_inicial = System.currentTimeMillis();
-            int cantidadTotal = 0;
-            int cantidadError = 0;
             /*int cantidadbeerhash = 0;
             int cantidadbreweriehash = 0;
             int cantidadreviewhash = 0;
@@ -57,21 +60,17 @@ public class DataLoad{
             //Chequeos chequeo = new Chequeos();
             br.readLine();
             while ((line = br.readLine()) != null) {
-                cantidadTotal++;
-                vectorStrings = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                boolean check = false;
-                if (vectorStrings[12] != null) {
-                    check = true;
-                    for (String vectorString : vectorStrings) {
-                        if (vectorString == null || vectorString.length() == 0) {
-                            check = false;
-                            break;
-                        }
-                    }
+                vectorStrings = line.split(",");
+                if (vectorStrings.length > 14) {
+                    vectorStrings = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
                 }
 
-                if (!check) {
-                    cantidadError++;
+                boolean check = true;
+                for (int i = 0; i < vectorStrings.length ; i++) {
+                    if (vectorStrings[i].length() == 0){
+                        check = false;
+                        break;
+                    }
                 }
 
                 if (check) {
@@ -80,7 +79,7 @@ public class DataLoad{
 
                     long review_id = Long.parseLong(vectorStrings[0]);
                     Timestamp ts = new Timestamp(Long.parseLong(vectorStrings[3]));
-                    Date review_date = new Date(ts.getTime());
+                    Date review_date = new Date(Long.valueOf(vectorStrings[3]) *1000);
                     double review_overall = Double.parseDouble(vectorStrings[4]);
                     double review_aroma = Double.parseDouble(vectorStrings[5]);
                     double review_appearance = Double.parseDouble(vectorStrings[6]);
@@ -95,47 +94,52 @@ public class DataLoad{
 
                     Beer newBeer = new Beer(beer_name, beer_id, beer_abv);
                     User newUser = new User(review_profilename);
-                    if (users.get(review_profilename.hashCode()) == null){
-                        users.put(review_profilename.hashCode(),newUser);
+                    if (users.get(review_profilename) == null){
+                        users.put(review_profilename,newUser);
                         //cantidaduserhash++;
                     }else{
-                        newUser = users.get(review_profilename.hashCode());
+                        newUser = users.get(review_profilename);
+                    }
+                    Style newStyle = null;
+
+                    if(styles.get(beer_style)==null){
+                        newStyle = new Style(beer_style);
+                        styles.put(beer_style,newStyle);
+
+                    }else{
+                        newStyle = styles.get(beer_style);
                     }
 
-                    Style newStyle = new Style(beer_style);
                     newBeer.setStyle(newStyle);
                     Brewery newBrewery = new Brewery(brewery_id, brewery_name);
                     Review newReview = new Review(review_id, review_date, review_overall, review_aroma, review_appearance, review_taste, newUser, brewery_id);
-                    reviews.put(beer_id,newReview);
+                    reviews.put(review_id,newReview);
                     //cantidadbreweriehash++;
                     newBeer.addReview(newReview);
 
                     if (breweries.get(brewery_id) == null) {
-                        newBrewery.addBeer(newBeer);
+                        newBrewery.addBeer(beer_id);
                         breweries.put(brewery_id, newBrewery);
                         beers.put(beer_id, newBeer);
+                        countCerveza++;
                         //cantidadbreweriehash++;
                         //cantidadbeerhash++;
                     } else {
                         newBrewery = breweries.get(brewery_id);
                         if (beers.get(beer_id) == null) {
-                            newBrewery.addBeer(newBeer);
-                            breweries.remove(brewery_id);
-                            breweries.put(brewery_id, newBrewery);
-                            beers.put(beer_id, newBeer);
-
+                            newBrewery.addBeer(beer_id);
+                            beers.put(beer_id,newBeer);
                         } else {
                             newBeer = beers.get(beer_id);
                             newBeer.addReview(newReview);
-                            beers.remove(beer_id);
-                            beers.put(beer_id, newBeer);
 
                         }
                     }
                 }
             }
 
-            /*System.out.println("Hash Reviews " + cantidadbreweriehash);*/
+            System.out.println("Hash cerveza " + beers.size());
+            System.out.println("Deberian haber: "+countCerveza);
             //System.out.println("Hash Users " + cantidaduserhash);
             /*System.out.println("Hash Beers " + cantidadbeerhash);
             System.out.println("Hash Breweries " + cantidadbreweriehash);*/
@@ -144,7 +148,7 @@ public class DataLoad{
             System.out.println("Hash Beers Posta " + beers.load);
             System.out.println("Hash Breweries Posta " + breweries.load);*/
 
-            System.out.println("Cantidad Total " + cantidadTotal + " Cantidad Error " + cantidadError);
+           // System.out.println("Cantidad Total " + cantidadTotal + " Cantidad Error " + cantidadError);
             tiempo_final = System.currentTimeMillis();
             System.out.println("Tiempo de carga: " + (tiempo_final - tiempo_inicial));
         } catch (IOException e) {
@@ -157,6 +161,5 @@ public class DataLoad{
         prueba.Carga();
     }
 
-    private class Static {
-    }
+
 }

@@ -133,4 +133,8 @@ public class MyHeapImpl<K extends Comparable<K>,T> implements MyHeap<K,T> {
         heap[index2] = temp;
     }
 
+    @Override
+    public HeapNode<K, T> getRoot() {
+        return heap[1];
+    }
 }

@@ -1,7 +1,7 @@
 
 import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
 import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayListImpl;
-import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
+import uy.edu.um.prog2.adt.tads.MyHash.MyHashtable;
 import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
 import uy.edu.um.prog2.adt.tads.MyQueue.MyQueue;
 import uy.edu.um.prog2.adt.tads.MyQueue.MyQueueImpl;
@@ -14,26 +14,6 @@ public class Beer {
     private long id;
     private double abv;
     private Style style;
-    private double aromaScoreAvg = 0;
-
-    public double AvgAroma(){
-        double sum = 0;
-        for(int i=0; i<this.getNumberReviews(); i++)
-        {
-            sum += this.getReviews().get(i).getAromaScore();
-        }
-        double AvgTot = this.aromaScoreAvg= sum/this.getNumberReviews();
-        return AvgTot;
-    }
-
-    public double getAromaScoreAvg() {
-        return aromaScoreAvg;
-    }
-
-    public void setAromaScoreAvg(double aromaScoreAvg) {
-        this.aromaScoreAvg = aromaScoreAvg;
-    }
-
     private MyArrayList<Review> reviews = new MyArrayListImpl<>();
 
     public Beer(String name, long id, double abv) {
@@ -85,11 +65,12 @@ public class Beer {
     public int getNumberReviews(){
         return reviews.size();
     }
+
     public double avgGeneralScore(){
         double result = 0;
         for (int i = 0; i < reviews.size(); i++) {
             result += reviews.get(i).getOverallScore();
         }
-        return result/getNumberReviews();
+        return result/reviews.size();
     }
 }

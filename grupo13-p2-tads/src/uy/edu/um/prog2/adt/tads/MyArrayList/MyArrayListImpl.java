@@ -29,7 +29,7 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
         if (i > size || i < 0){
             throw new ArrayIndexOutOfBoundsException();
         }
-        return array[i];
+        return (T) array[i];
     }
 
     @Override
@@ -41,6 +41,15 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
         System.arraycopy(array,i + 1,array,i,size-i);
         array[size]=null;
 
+    }
+
+    @Override
+    public void remove(T value) {
+        for (int i = 0; i < size; i++) {
+            if (get(i).equals(value)){
+                remove(i);
+            }
+        }
     }
 
     @Override

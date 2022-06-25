@@ -1,13 +1,11 @@
-import uy.edu.um.prog2.adt.tads.MyHash.MyHash;
-import uy.edu.um.prog2.adt.tads.MyHash.MyHashImpl;
-
-import java.util.Date;
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayListImpl;
 
 public class Brewery {
 
     private long id;
     private String name;
-    private MyHash<Long,Beer> beers = new MyHashImpl<>();
+    private MyArrayList<Long> beers = new MyArrayListImpl<>();
     private int reviewsPerYear = 0;
 
     public Brewery(long id, String name) {
@@ -31,15 +29,15 @@ public class Brewery {
         this.name = name;
     }
 
-    public void addBeer(Beer beer){
-        beers.put(beer.getId(), beer);
+    public void addBeer(Long beerId){
+        beers.insert(beerId);
     }
 
-    public MyHash<Long, Beer> getBeers() {
+    public MyArrayList<Long> getBeers() {
         return beers;
     }
 
-    public void setBeers(MyHash<Long, Beer> beers) {
+    public void setBeers(MyArrayList<Long> beers) {
         this.beers = beers;
     }
 
@@ -47,7 +45,7 @@ public class Brewery {
         return reviewsPerYear;
     }
 
-    public void setReviewsPerYear() {
-        this.reviewsPerYear++;
+    public void setReviewsPerYear(int reviewsPerYear) {
+        this.reviewsPerYear = reviewsPerYear;
     }
 }

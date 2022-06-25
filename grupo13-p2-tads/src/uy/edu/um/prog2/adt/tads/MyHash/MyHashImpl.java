@@ -1,21 +1,38 @@
 package uy.edu.um.prog2.adt.tads.MyHash;
 
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayListImpl;
+
+import java.util.ArrayList;
+
 import static java.lang.Math.abs;
 
-public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
+public class MyHashImpl<Key, Value> implements MyHashtable<Key, Value> {
 
     private NodeHashTable<Key, Value>[] elements;
+    private MyArrayList<Key> keys;
+    private MyArrayList<Value> values;
     private final static int INITIAL_SIZE = 10;
     public int load;
     private final static float LOAD_FACTOR = 0.8f;
 
     public MyHashImpl() {
         this.elements = new NodeHashTable[INITIAL_SIZE];
+        keys = new MyArrayListImpl<>();
+        values = new MyArrayListImpl<>();
         this.load = 0;
     }
 
     public NodeHashTable<Key, Value>[] getElements() {
         return elements;
+    }
+
+    public MyArrayList<Key> getKeys() {
+        return keys;
+    }
+
+    public void setKeys(MyArrayList<Key> keys) {
+        this.keys = keys;
     }
 
     public void setElements(NodeHashTable<Key, Value>[] elements) {
@@ -40,6 +57,8 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
         {
             NodeHashTable<Key, Value> nodo = new NodeHashTable(key,V);
             elements[position] = nodo;
+            keys.insert(key);
+            values.insert(V);
             load++;
         }else
         {
@@ -56,6 +75,8 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
             {
                 NodeHashTable<Key, Value> node = new NodeHashTable<>(key,V);
                 elements[newPosition] = node; // Aca YO cambie position por new position
+                keys.insert(key);
+                values.insert(V);
                 load++;
             }
         }
@@ -105,9 +126,10 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
                 int newPosition = 0;
 
                 do {
-                    nroColision++;
                     newPosition = (Math.abs(key.hashCode()) + colision(nroColision)) % elements.length;
-                } while(elements[newPosition]!=null && !elements[position].isDeleted() && elements[newPosition].getKey() == key
+                    nroColision++;
+
+                } while(elements[newPosition]!=null &&  elements[position].getKey().equals(key)
                         && nroColision < elements.length);
                 if(nroColision < elements.length)
                 {
@@ -129,6 +151,7 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
             if (!this.elements[position].isDeleted()
                     && this.elements[position].getKey().equals(key)) {
                 elements[position].setDeleted(true);
+                keys.remove(key);
                 this.load--;
             } else {
                 int nroColision = 1;
@@ -143,6 +166,7 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
                 if (elements[newPosition] != null && nroColision < elements.length && !elements[newPosition].isDeleted())
                 {
                     elements[newPosition].setDeleted(true);
+                    keys.remove(key);
                     this.load--;
                 }
             }
@@ -151,7 +175,11 @@ public class MyHashImpl<Key, Value> implements MyHash<Key, Value> {
 
     @Override
     public int size() {
-        return elements.length;
+        return load;
     }
 
+    @Override
+    public MyArrayList<Value> getValues() {
+        return values;
+    }
 }

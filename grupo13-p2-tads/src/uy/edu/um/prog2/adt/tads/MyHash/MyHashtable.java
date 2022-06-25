@@ -1,6 +1,8 @@
 package uy.edu.um.prog2.adt.tads.MyHash;
 
-public interface MyHash<Key, Value> {
+import uy.edu.um.prog2.adt.tads.MyArrayList.MyArrayList;
+
+public interface MyHashtable<Key, Value> {
 
     void put(Key K, Value V);
 
@@ -8,7 +10,9 @@ public interface MyHash<Key, Value> {
 
     void remove(Key K);
 
+    MyArrayList<Value> getValues();
+
     int size();
 
-    NodeHashTable<Key,Value>[] getElements();
+
 }

@@ -84,4 +84,12 @@ public class Review {
         String year = getYearFormat.format(date);
         return year;
     }
+
+    public long getIdBrewery() {
+        return idBrewery;
+    }
+
+    public void setIdBrewery(long idBrewery) {
+        this.idBrewery = idBrewery;
+    }
 }
