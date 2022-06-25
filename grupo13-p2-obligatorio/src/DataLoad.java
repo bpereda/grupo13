@@ -48,7 +48,7 @@ public class DataLoad{
 
         try {
             long tiempo_final;
-            FileReader fileReader = new FileReader("C:\\Users\\belen\\OneDrive - Universidad de Montevideo\\Facultad\\Tercer Semestre\\Programación II\\Obligatorio2022\\2022_obligatorio_dataset\\beer_dataset_full.csv");
+            FileReader fileReader = new FileReader("grupo13-p2-obligatorio/src/beer_dataset_full.csv");
             BufferedReader br = new BufferedReader(fileReader);
             String[] vectorStrings;
             String line;
@@ -96,7 +96,6 @@ public class DataLoad{
                     User newUser = new User(review_profilename);
                     if (users.get(review_profilename) == null){
                         users.put(review_profilename,newUser);
-                        //cantidaduserhash++;
                     }else{
                         newUser = users.get(review_profilename);
                     }
@@ -138,27 +137,13 @@ public class DataLoad{
                 }
             }
 
-            System.out.println("Hash cerveza " + beers.size());
-            System.out.println("Deberian haber: "+countCerveza);
-            //System.out.println("Hash Users " + cantidaduserhash);
-            /*System.out.println("Hash Beers " + cantidadbeerhash);
-            System.out.println("Hash Breweries " + cantidadbreweriehash);*/
-            /*System.out.println("Hash Reviews Posta " + reviews.load);
-            System.out.println("Hash Users Posta " + users.size());
-            System.out.println("Hash Beers Posta " + beers.load);
-            System.out.println("Hash Breweries Posta " + breweries.load);*/
 
-           // System.out.println("Cantidad Total " + cantidadTotal + " Cantidad Error " + cantidadError);
+
             tiempo_final = System.currentTimeMillis();
             System.out.println("Tiempo de carga: " + (tiempo_final - tiempo_inicial));
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        DataLoad prueba = new DataLoad();
-        prueba.Carga();
     }
 
 

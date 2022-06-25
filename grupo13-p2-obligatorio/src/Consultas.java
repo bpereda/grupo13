@@ -25,6 +25,7 @@ public class Consultas {
     private MyArrayList<Brewery> breweriesValues = breweries.getValues();
     private MyArrayList<User> usersValues = users.getValues();
     private MyArrayList<Review> reviewsElements = reviews.getValues();
+    private MyArrayList<Style> stylesValues = styles.getValues();
 
     public void Consulta1(String year){
         long tiempo_final;
@@ -120,29 +121,31 @@ public class Consultas {
     public void Consulta4()
     {
         long tiempo_inicial = System.currentTimeMillis();
-        MyHeapImpl<Double,Style> Top7 = new MyHeapImpl<>(true);
+        MyHeapImpl<Double,String> Top7 = new MyHeapImpl<>(true);
         for (int i = 0; i < beersValues.size(); i++) {
             Beer temp = beersValues.get(i);
             MyArrayList<Review> reviews = temp.getReviews();
             Style tmp = temp.getStyle();
 
             for (int j = 0; j < reviews.size(); j++) {
-
                 tmp.getAromaScores().insert(reviews.get(j).getAromaScore());
             }
+        }
+        for (int i = 0; i < stylesValues.size(); i++) {
+            Style temp = stylesValues.get(i);
+            MyArrayList<Double> aromasScore = temp.getAromaScores();
             double promedio = 0;
-            for (int j = 0; j < tmp.getAromaScores().size(); j++) {
-               promedio =+ tmp.getAromaScores().get(j);
+            for (int j = 0; j < aromasScore.size(); j++) {
+                promedio += aromasScore.get(j);
             }
-            promedio /= tmp.getAromaScores().size();
-            Top7.insert(promedio,tmp);
-
+            promedio /= aromasScore.size();
+            Top7.insert(promedio,temp.getName());
         }
 
         for(int i=0; i<7; i++)
         {
-            HeapNode<Double, Style> temporal = Top7.delete();
-            System.out.println("Estilo: " + temporal.getValue().getName() + ", Promedio de Aroma: " + temporal.getKey());
+            HeapNode<Double, String> temporal = Top7.delete();
+            System.out.println("Estilo: " + temporal.getValue() + ", Promedio de Aroma: " + temporal.getKey());
         }
         long tiempo_final = System.currentTimeMillis();
         System.out.println("Tiempo consulta 4: " + (tiempo_final - tiempo_inicial));
